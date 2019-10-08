@@ -5,4 +5,4 @@ This is a music website created for my WEB601 course project. It is inspired wit
 
 ## Setup Instructions
 
-Open first the client then the server folders in the terminal and use 'npm i' in each to setup all needed dependencies.
+Open first the client then the server folders in the terminal and use <strong>npm i</strong> in each to setup all needed dependencies.
