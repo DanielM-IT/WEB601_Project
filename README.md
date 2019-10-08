@@ -11,6 +11,5 @@ Open first the client then the server folders in the terminal and use <strong> '
 ## Start Scripts
 
 To start both the server and run the client open each in the terminal and use <strong> 'npm start' </strong>.
-<br>
-<br>
+
 This project was initially bootstrapped with Create React App.
