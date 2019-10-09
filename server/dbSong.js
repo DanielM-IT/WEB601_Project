@@ -1,4 +1,6 @@
-// Lists all the songs
+// These are the equivalents of sql queries. They select all or specific data, add data, update data, and delete data.
+
+// Lists all the songs. Basically a select all function.
 function listAllSongs(req, res) {
     const {
         knex
@@ -11,7 +13,7 @@ function listAllSongs(req, res) {
         .catch(error => res.status(500).json(error))
 }
 
-// Lists single song by ID
+// A function that specifies a condition to retrieve a single song using its ID.
 function listSingleSong(req, res) {
     // Destructuring 
     const {
@@ -45,11 +47,11 @@ function postSong(req, res) {
         knex
     } = req.app.locals
     const payload = req.body
-    // Parsing payload
+    // Parsing payload which is the parameters sent from the client as part of the POST request.
     const mandatoryColumns = ['Title', 'Author', 'Length', 'Genre']
     const payloadKeys = Object.keys(payload)
     const mandatoryColumnsExists = mandatoryColumns.every(mc => payloadKeys.includes(mc))
-    // Checking if MC is filled then posts
+    // Checking if all mandatory columns are filled before posting. If they arent it will return an error.
     if (mandatoryColumnsExists) {
         knex('Song')
             .insert(payload)
@@ -104,6 +106,7 @@ function deleteSong(req, res) {
         .catch(error => res.status(500).json(error))
 }
 
+// Exports all the functions as a module object.
 module.exports = {
     listAllSongs,
     listSingleSong,

@@ -1,5 +1,7 @@
+// Stores the port number to be used in a variable.
 const APIServerPort = 4200
 
+// Stores the database details where data is being retrieved from and store them in a variable.
 const database = {
     host: 'localhost',
     port: 3306,
@@ -9,7 +11,7 @@ const database = {
     insecureAuth: true
 }
 
-// Then we export it
+// Then we place these variables into a module object and export them.
 module.exports = {
     database,
     APIServerPort
