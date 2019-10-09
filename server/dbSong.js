@@ -1,4 +1,4 @@
-// These are the equivalents of sql queries. They select all or specific data, add data, update data, and delete data.
+// These are the equivalents of sql queries. They are usign Knex as the query builder and select all or specific data, add data, update data, and delete data.
 
 // Lists all the songs. Basically a select all function.
 function listAllSongs(req, res) {
