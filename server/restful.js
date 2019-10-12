@@ -13,7 +13,7 @@ const jsonParser = bodyParser.json()
 // Uses Knex to connect to the MySQL database.
 const knex = require('knex')({
     client: 'mysql',
-    connection: config.database
+    connection: config.database 
 })
 
 // Add the Knex DB connection to the app.locals object.
