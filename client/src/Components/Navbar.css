@@ -1,0 +1,31 @@
+.navbar {
+    padding: 2%;
+  }
+  
+  .navbar-logo {
+    height: 80px;
+    width: 100px;
+    float: left;
+  }
+  
+  .navbar-item {
+  float: left;
+  }
+  
+  .navbar-link{
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--mainWhite)!important;
+    font-size: 1.3rem;
+    float: right;
+  }
+  
+  .navbar ul li {
+    float: right;
+  }
+  
+  .dropdown ul li {
+    display: block;
+  }
+  
+  

@@ -1,6 +1,6 @@
 import React from 'react'
 import './UploadMusic.css'
-import { BtnContainer } from '../../Buttons';
+import { BtnContainer } from '../../pageElements/Buttons';
 
 
 export default class UploadMusic extends React.Component {

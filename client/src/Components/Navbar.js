@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-import {BtnContainer} from './Buttons'
-import Dropdown from './Dropdown';
+import {BtnContainer} from './pageElements/Buttons'
+import Dropdown from './pageElements/Dropdown';
+import './Navbar.css'
 
 
 

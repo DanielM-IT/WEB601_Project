@@ -3,7 +3,7 @@ import './App.css'
 import {Switch,Route} from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Home from './Components/pages/Home'
-import Support from './Components/pages/Support'
+import Support from './Components/pages/Support/Support'
 import MyAccount from './Components/pages/MyAccount'
 import Default from './Components/pages/Default'
 import BrowseMusic from './Components/pages/BrowseMusic/BrowseMusic'
@@ -18,7 +18,6 @@ const App = () => (
   <div className="container">
         <div className="header">
           <Navbar />
-
         </div>
         <div className="body"> 
             <Switch>

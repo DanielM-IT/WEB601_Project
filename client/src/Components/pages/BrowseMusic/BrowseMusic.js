@@ -1,5 +1,5 @@
 import React from 'react'
-import Title from '../../Title'
+import Title from '../../pageElements/Title'
 import './BrowseMusic.css'
 import Song from '../../data/BrowseSongs'
 

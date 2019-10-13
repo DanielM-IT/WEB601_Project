@@ -8,13 +8,6 @@
   --mainYellow: #ffa400;
 }
 
-/* Container for body of all pages */
- .container {
-  min-height: 65vh;
-  background-color: #54585f;
- }
-
-
  /* Header styling */
  .header {
   height: 15vh;
@@ -23,139 +16,28 @@
 /* End of header styling */
 
 
-/* All navbar related styling */
-.navbar {
-  padding: 2%;
-}
-
-.navbar-logo {
-  height: 80px;
-  width: 100px;
-  float: left;
-}
-
-.navbar-item {
-float: left;
-}
-
-.navbar-link{
-  padding-left: 20px;
-  padding-right: 20px;
-  color: var(--mainWhite)!important;
-  font-size: 1.3rem;
-  float: right;
-}
-
-.navbar ul li {
-  float: right;
-}
-
-.dropdown ul li {
-  display: block;
-}
-/* End of navbar related styling */
-
-
-
 /* Body styling */
-
 body{
   font-family: "sans-serif";
   background: var(--mainWhite) !important;
   color: var(--mainDark) !important;
 }
-
 /* End of body styling */
 
 
-/* Titles */
-.text-title{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  letter-spacing: 0.3rem;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.text-blue {
-  color: var(--mainBlue);
-}
-/* End of titles */
-
-
-/* Home page */
-.featureImage {
-  width: 100%;
-  height: auto;
- }
-
- .tempSearchBar {
-   margin: 0 auto;
-   display: block;
- }
-
-.websitePurposeText {
-  position: absolute;
-  top: 45%;
-  left: 43%;
-  color: red;
-}
-
-.callToAction {
-  position: absolute;
-  bottom: 40%;
-  left: 45%;
-}
-
- .grid {
-   display: grid;
-   height: 500px;
-   width: 100%;
-   grid-template:  50% 50% 50% / 16% 16% 16% ;
-   grid-gap: 10%;
-   padding-left: 15%;
-   padding-right: 10%;
-   padding-bottom: 10%;
- }
-
- .promotionItem {
-  border: solid 1px var(--mainYellow);
- }
-/* End of home page */
-
-
-/* Support page */
-.formBody {
-  width: 35%;
-  margin: 3% auto;
-  height: auto;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 40px;
-  padding: 2% 10% 2% 10%;
-}
-/* End of support page */
-
-.footerContainer {
-  min-height: 15vh;
+/* Footer styling */
+.footer {
+  height: 15vh;
+  background-color: #232528;
   clear: both;
 }
+/* End of footer styling */
 
- .leftColumn {
-   width: 20%;
-   background-color: #36393f;
-   float: left;
-   height: 100%;
+
+/* Container for body of all pages */
+ .container {
+  min-height: 65vh;
+  background-color: #54585f;
  }
 
-.middleColumn {
-  width: 60%;
-  float: left;
-  text-align: center;
-}
-
- .rightColumn {
-  width: 20%;
-  background-color: #36393f;
-  float: right;
-  height: 100%;
-}
 

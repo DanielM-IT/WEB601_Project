@@ -4,16 +4,15 @@
     float: left;
     color: var(--mainWhite);
     text-align: center;
-    height: 100%;
+    min-height: 70vh;
     padding: 3%;
   }
  
   .contentColumn {
-   width: 80%;
-   float: right;
-   background-color: var(--mainWhite);
-   height: 100%;
-   padding: 3%;
-   
+    width: 80%;
+    background-color: var(--mainWhite);
+    padding: 3%;
+    float: right;
+    min-height: 70vh;
   }
  

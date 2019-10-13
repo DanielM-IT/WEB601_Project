@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import Title from '../Title'
+import Title from '../../pageElements/Title'
+import './Support.css'
 
 
 export default class Support extends Component {

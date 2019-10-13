@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginForm from '../../forms/LoginForm'
-import Title from '../../Title'
+import Title from '../../pageElements/Title'
 import './Login.css'
 
 
