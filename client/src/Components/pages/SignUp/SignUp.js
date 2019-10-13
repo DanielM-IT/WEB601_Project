@@ -131,28 +131,26 @@ export default class SignUp extends React.Component {
                 <div className="signUpForm">
                     <Title name="Sign Up" title="Here" />
                     <form method="post" name="signUpForm" onSubmit= {this.submitSignUpForm} >
-                        <hr />
                         <br /> 
                         <label>First Name</label> 
-                        <input type="text" name="firstName" value={this.state.fields.firstName} onChange={this.handleChange} />   
+                        <input type="text" name="firstName" placeholder="Your first name.." value={this.state.fields.firstName} onChange={this.handleChange} />   
                         <div className='errorMessage'>{this.state.errors.firstName}</div>
                         <label>Last Name</label> 
-                        <input type="text" name="lastName" value={this.state.fields.lastName} onChange={this.handleChange} />   
+                        <input type="text" name="lastName" placeholder="Your last name.." value={this.state.fields.lastName} onChange={this.handleChange} />   
                         <div className='errorMessage'>{this.state.errors.lastName}</div>
                         <label>Email Address</label>
-                        <input type="text" name="email" value={this.state.fields.email} onChange={this.handleChange} />   
+                        <input type="text" name="email" placeholder="Your email.." value={this.state.fields.email} onChange={this.handleChange} />   
                         <div className='errorMessage'>{this.state.errors.email}</div>
                         <label>Phone</label>
-                        <input type="text" name="phone" value={this.state.fields.phone} onChange={this.handleChange} />   
+                        <input type="text" name="phone" placeholder="Your phone number.." value={this.state.fields.phone} onChange={this.handleChange} />   
                         <div className='errorMessage'>{this.state.errors.phone}</div>
                         <label>User Name</label>
-                        <input type="text" name="userName" value={this.state.fields.userName} onChange={this.handleChange} />   
+                        <input type="text" name="userName" placeholder="Choose a username.." value={this.state.fields.userName} onChange={this.handleChange} />   
                         <div className='errorMessage'>{this.state.errors.userName}</div>
                         <label>Password</label>
-                        <input type="text" name="password" value={this.state.fields.password} onChange={this.handleChange} />   
+                        <input type="text" name="password" placeholder="Choose a password.." value={this.state.fields.password} onChange={this.handleChange} />   
                         <div className='errorMessage'>{this.state.errors.password}</div>
                         <br />
-                        <hr />
                         <input type="submit" className="button" value="Sign Up" />
                     </form>
                 </div>

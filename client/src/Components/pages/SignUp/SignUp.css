@@ -21,16 +21,22 @@ form label, form input {
 form input {
     padding: 9px;
     border: solid 1px #BDC7D8; 
+    border-radius: 4px;
 }
 
 .button {
     width: 50%;
-    margin: 6% 20%;
-    border-radius: 5px;
+    margin: 6% 20% 6% 25%;
+    border-radius: 7px;
     background-color: #0083cf ;
     color: white;
     font-weight: bold;
 }
+
+.button:hover{
+    background-color: #006ba8;
+    cursor: pointer;
+  }
 
 .errorMessage {
     color: #cc0000;

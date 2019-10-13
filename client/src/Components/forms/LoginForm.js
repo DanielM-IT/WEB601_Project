@@ -40,36 +40,36 @@ class LoginForm extends React.Component {
     render() {
         const { data, errors } = this.state
 
-      return (  
-        <Form onSubmit={this.onSubmit}>
-            <label>Email</label>
-            <Form.Field error={!!errors.email}>
-                <input 
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="example@example.com"
-                    value={data.email}
-                    onChange={this.onChange}
-                    />
-                    {errors.email && <InlineError text={errors.email} />}
-            </Form.Field>
-            <label>Password</label>
-            <Form.Field error={!!errors.password}>
-                <input 
-                    type="password"
-                    id="password"
-                    name="password" 
-                    placeholder="Password1"
-                    value={data.password}
-                    onChange={this.onChange}
-                    />
-                    {errors.password && <InlineError text={errors.password} />}
+        return (  
+            <Form onSubmit={this.onSubmit}>
+                <label>Email</label>
+                <Form.Field error={!!errors.email}>
+                    <input 
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="example@example.com"
+                        value={data.email}
+                        onChange={this.onChange}
+                        />
+                        {errors.email && <InlineError text={errors.email} />}
+                </Form.Field>
+                <label>Password</label>
+                <Form.Field error={!!errors.password}>
+                    <input 
+                        type="password"
+                        id="password"
+                        name="password" 
+                        placeholder="Password1"
+                        value={data.password}
+                        onChange={this.onChange}
+                        />
+                        {errors.password && <InlineError text={errors.password} />}
 
-            </Form.Field>
-            <br />
-            <Button primary>Login</Button>
-        </Form>      
+                </Form.Field>
+                <br />
+                <Button primary>Login</Button>
+            </Form>      
         );
     }
   }
