@@ -95,7 +95,7 @@ export default class Support extends React.Component {
 
     render() {
         return(
-            <div className="container">
+            <div className="supportWrapper">
                 <section className="formBody">
                     <Title name="Support" />
                     <form method="post" name="supportForm" onSubmit= {this.submitSupportForm} >

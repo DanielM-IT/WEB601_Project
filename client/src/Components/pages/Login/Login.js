@@ -12,7 +12,7 @@ export default class LoginPage extends React.Component {
 
   render() {
     return (
-      <div className="loginContainer">
+      <div className="loginWrapper">
         <section className="loginForm">
           <Title name="User" title="Login" />
           <br />

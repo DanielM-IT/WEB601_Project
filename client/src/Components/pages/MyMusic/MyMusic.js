@@ -43,7 +43,7 @@ export default class MyMusic extends React.Component {
 
     render() {
         return(
-            <div className="container">
+            <div className="myMusicWrapper">
                 <div className="listColumn">
                     <h3>Categories</h3>
                     <ul>

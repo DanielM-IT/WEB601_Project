@@ -127,7 +127,7 @@ export default class SignUp extends React.Component {
 
     render() {
         return(
-            <div className="signUpContainer">
+            <div className="signUpWrapper">
                 <div className="signUpForm">
                     <Title name="Sign Up" title="Here" />
                     <form method="post" name="signUpForm" onSubmit= {this.submitSignUpForm} >

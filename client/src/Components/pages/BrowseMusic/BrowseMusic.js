@@ -43,7 +43,7 @@ export default class BrowseMusic extends React.Component {
 
     render() {
         return(
-            <div className="container">
+            <div className="browseMusicWrapper">
                 <div className="categoryColumn">
                     <h3>Categories</h3>
                     <ul>
