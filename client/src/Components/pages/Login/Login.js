@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginForm from '../../forms/LoginForm'
-import Title from '../../pageElements/Title'
+import PageTitle from '../../pageElements/PageTitle'
 import './Login.css'
 
 
@@ -14,7 +14,7 @@ export default class LoginPage extends React.Component {
     return (
       <div className="loginWrapper">
         <section className="loginForm">
-          <Title name="User" title="Login" />
+          <PageTitle name="User" title="Login" />
           <br />
           <form>
             <div className='loginFormFields'>

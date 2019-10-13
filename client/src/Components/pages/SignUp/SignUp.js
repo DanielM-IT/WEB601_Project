@@ -1,5 +1,5 @@
 import React from 'react'
-import Title from '../../pageElements/Title'
+import PageTitle from '../../pageElements/PageTitle'
 import './SignUp.css'
 
 
@@ -128,7 +128,7 @@ export default class SignUp extends React.Component {
     render() {
         return(
             <div className="signUpForm">
-                <Title name="Sign Up" title="Here" />
+                <PageTitle name="Sign Up" title="Here" />
                 <form method="post" name="signUpForm" onSubmit= {this.submitSignUpForm} >
                     <br /> 
                     <label>First Name</label> 

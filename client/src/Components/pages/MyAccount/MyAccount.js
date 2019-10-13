@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Title from '../../pageElements/Title'
+import PageTitle from '../../pageElements/PageTitle'
 import './MyAccount.css'
 
 
@@ -22,7 +22,7 @@ export default class MyAccount extends React.Component {
                 </div>
                 <div className="accountContentColumn">
                     <section className="accountDetails">
-                        <Title name="My" title="Account" />
+                        <PageTitle name="My" title="Account" />
                         <div className="accountGrid">
                             <form>
                                 <div className="leftColumn">

@@ -1,5 +1,5 @@
 import React from 'react'
-import Title from '../../pageElements/Title'
+import PageTitle from '../../pageElements/PageTitle'
 import './Support.css'
 
 
@@ -96,7 +96,7 @@ export default class Support extends React.Component {
     render() {
         return(
             <section className="formBody">
-                <Title name="Support" />
+                <PageTitle name="Support" />
                 <form method="post" name="supportForm" onSubmit= {this.submitSupportForm} >
                     <br />
                     <label for="firstName">First Name</label>

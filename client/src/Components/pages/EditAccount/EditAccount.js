@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Title from '../../pageElements/Title'
+import PageTitle from '../../pageElements/PageTitle'
 import './EditAccount.css'
 
 
@@ -129,7 +129,7 @@ export default class MyAccount extends React.Component {
     render() {
         return(
             <div className="editAccountForm">
-                <Title name="Edit" title="Account" />
+                <PageTitle name="Edit" title="Account" />
                 <form method="post" name="editAccountForm" onSubmit= {this.submitAccountForm} >
                     <br /> 
                     <label>First Name</label> 

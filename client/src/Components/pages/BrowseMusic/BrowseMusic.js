@@ -1,5 +1,5 @@
 import React from 'react'
-import Title from '../../pageElements/Title'
+import PageTitle from '../../pageElements/PageTitle'
 import './BrowseMusic.css'
 import Song from '../../data/BrowseSongs'
 
@@ -67,7 +67,7 @@ export default class BrowseMusic extends React.Component {
                     </ul>
                 </div>
                 <div className='contentColumn'>
-                    <Title name="Browse" title="Music" />
+                    <PageTitle name="Browse" title="Music" />
                     <Song songs={this.state.songs}/>              
                 </div>
             </div>
