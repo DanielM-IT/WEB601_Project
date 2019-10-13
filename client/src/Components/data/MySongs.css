@@ -1,0 +1,29 @@
+.songGrid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.song {
+    border-radius: 5px;
+    padding: 20px;
+    margin: 4%;
+    width: 23%;
+    background-color: rgb(185, 185, 185);
+    text-align: center;
+  }
+
+  .details {
+    float: left;
+  }
+
+  .songLength {
+    float: right;
+  }
+
+  .editButton {
+    margin-right: 2%;
+  }
+
+  .deleteButton {
+    margin-left: 2%;
+  }
