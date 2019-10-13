@@ -15,12 +15,13 @@ export default class LoginPage extends React.Component {
       <div className="container">
         <section className="loginPage">
           <Title name="User" title="Login" />
+          <br />
           <form>
             <div className='loginForm'>
               <LoginForm submit={this.submit} />
             </div>
           </form>
-        </section>
+        </section> 
       </div> 
     )
   }

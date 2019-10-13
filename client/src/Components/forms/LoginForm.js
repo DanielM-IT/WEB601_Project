@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Form, Button} from 'semantic-ui-react'
 import Validator from 'validator'
 import InlineError from '../messages/InlineError'
+import './LoginForm.css'
 
 
 
@@ -41,8 +42,8 @@ class LoginForm extends React.Component {
 
       return (  
         <Form onSubmit={this.onSubmit}>
+            <label>Email</label>
             <Form.Field error={!!errors.email}>
-                <label htmlFor="email">Email</label>
                 <input 
                     type="email"
                     id="email"
@@ -53,12 +54,12 @@ class LoginForm extends React.Component {
                     />
                     {errors.email && <InlineError text={errors.email} />}
             </Form.Field>
+            <label>Password</label>
             <Form.Field error={!!errors.password}>
-                <label htmlFor="password">Password</label>
                 <input 
                     type="password"
                     id="password"
-                    name="password"
+                    name="password" 
                     placeholder="Password1"
                     value={data.password}
                     onChange={this.onChange}
@@ -66,6 +67,7 @@ class LoginForm extends React.Component {
                     {errors.password && <InlineError text={errors.password} />}
 
             </Form.Field>
+            <br />
             <Button primary>Login</Button>
         </Form>      
         );
