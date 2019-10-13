@@ -7,7 +7,7 @@ function listAllSongs(req, res) {
     } = req.app.locals
     knex
         .select('SongId','Title', 'Author', 'Length', 'Genre')
-        .from('Song')
+        .from('song')
        
         .then(data => res.status(200).json(data))
         .catch(error => res.status(500).json(error))
@@ -25,7 +25,7 @@ function listSingleSong(req, res) {
     knex
         // DB Query
         .select('SongId','Title', 'Author', 'Length', 'Genre')
-        .from('Song')
+        .from('song')
         .where({
             SongId: `${SongId}`
         })
@@ -48,14 +48,17 @@ function postSong(req, res) {
     } = req.app.locals
     const payload = req.body
     // Parsing payload which is the parameters sent from the client as part of the POST request.
-    const mandatoryColumns = ['Title', 'Author', 'Length', 'Genre']
+    const mandatoryColumns = [/*'Title' , 'Length', 'Author', 'Genre'*/]
     const payloadKeys = Object.keys(payload)
     const mandatoryColumnsExists = mandatoryColumns.every(mc => payloadKeys.includes(mc))
     // Checking if all mandatory columns are filled before posting. If they arent it will return an error.
     if (mandatoryColumnsExists) {
-        knex('Song')
+        knex('song')
             .insert(payload)
-            .then(response => res.status(201).json('Song record created'))
+            .then(response => {
+                if (response) {
+                    res.status(201).json('Song record created')
+                }})
             .catch(error => res.status(500).json(error))
 
     } else {
@@ -72,7 +75,7 @@ function updateSong(req, res) {
         SongId
     } = req.params
     const payload = req.body
-    knex('Song')
+    knex('song')
         .where('SongId', SongId)
         .update(payload)
         .then(response => {
@@ -93,7 +96,7 @@ function deleteSong(req, res) {
     const {
         SongId
     } = req.params
-    knex('Song')
+    knex('song')
         .where('SongId', SongId)
         .del()
         .then(response => {

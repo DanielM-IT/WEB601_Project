@@ -20,7 +20,7 @@ export default class MySongs extends React.Component {
                     <button className="editButton" /*onClick={}*/>
                         Edit Song
                     </button>
-                    <button className="deleteButton" /*onClick={}*/>
+                    <button className="editButton" /*onClick={}*/>
                         Delete Song
                     </button>
                </div>
