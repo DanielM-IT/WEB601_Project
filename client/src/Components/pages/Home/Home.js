@@ -6,7 +6,7 @@ import './Home.css'
 
 export default class Home extends Component {
     render() {
-        return(
+        return( 
             <div className="landingPageWrapper">
                 <div className="featureContainer">
                     <img src='../../images/black_business_technology.jpg' alt="featureMic" className="featureImage" /> 
