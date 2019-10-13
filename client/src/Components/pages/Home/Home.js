@@ -24,7 +24,7 @@ export default class Home extends Component {
                 <div>
                     <img src='../../icons/searchBar.png' alt="tempSearchBarImg" className="tempSearchBar" /> 
                 </div>
-                <div className="grid">
+                <div className="homeGrid">
                     <div className="promotionItem">
                         <h2>promotions here</h2>
                     </div>

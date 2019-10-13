@@ -48,13 +48,21 @@ export default class BrowseMusic extends React.Component {
                     <h3>Categories</h3>
                     <ul>
                         <li>Category 1</li>
+                        <br />
                         <li>Category 2</li>
+                        <br />
                         <li>Category 3</li>
+                        <br />
                         <li>Category 4</li>
+                        <br />
                         <li>Category 5</li>
+                        <br />
                         <li>Category 6</li>
+                        <br />
                         <li>Category 7</li>
+                        <br />
                         <li>Category 8</li>
+                        <br />
                         <li>Category 9</li>
                     </ul>
                 </div>

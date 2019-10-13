@@ -1,0 +1,46 @@
+.pagesListColumn {
+    width: 30%;
+    background-color: #36393f; 
+    float: left;
+    color: var(--mainWhite);
+    min-height: 70vh;
+    padding: 3%;
+  }
+ 
+  .accountContentColumn {
+   width: 70%;
+   background-color: var(--mainWhite);
+   padding: 3%;
+   float: right;
+   min-height: 70vh;
+  }
+
+  .accountDetails {
+    width: 500px;
+    margin: 1% auto;
+    height: auto;
+  }
+
+  .accountGrid {
+    width: 100%;
+  }
+
+  .leftColumn {
+    float: left;
+    width: 50%;
+  }
+
+  .rightColumn {
+    float: right;
+    width: 50%;
+  }
+
+  .editButton {
+    width: 100px; 
+    margin: 6% 20% 6% 35%; 
+    border-radius: 7px;
+    background-color: #0083cf ;
+    color: white;
+    font-weight: bold;
+  }
+ 

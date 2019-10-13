@@ -1,13 +1,7 @@
-.signUpContainer {
-    min-height: 70vh;
-    background-color: #54585f;
-  }
-
 .signUpForm {
     width: 450px;
     margin: 4% auto;
-    min-height: 60vh;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--mainWhite);
     border-radius: 30px;
     text-align: center;
     padding: 1% 4%;
