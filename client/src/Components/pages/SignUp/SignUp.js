@@ -150,7 +150,7 @@ export default class SignUp extends React.Component {
                     <input type="text" name="password" placeholder="Choose a password.." value={this.state.fields.password} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.password}</div>
                     <br />
-                    <input type="submit" className="button" value="Sign Up" />
+                    <input type="submit" className="button" value="Sign Up" /> 
                 </form>
             </div>
         )

@@ -1,20 +1,67 @@
-  .uploadMusicBackground {
-    height: auto;
-    padding-left: 15%;
-    padding-right: 10%;
-    padding-bottom: 10%;
-    text-align: center;
-    margin-top: 5%;
-  }
+.uploadMusicWrapper {
+  min-height: 70vh;
+}
   
-  .uploadItem {
-    border: solid 1px var(--mainYellow);
-    width: 70%;
-    margin-top: 15%;
-    margin-left: 15%;
-    margin-right: 15%;
-    height: auto;
-    padding: 4%;
-  }
+.uploadMusicBackground {
+  height: auto;
+  padding: 3% 15%;
+}
+  
+.uploadSong {
+  border: solid 1px var(--mainYellow);
+  width: 70%;
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 9% 9% 6% 9%;
+}
 
+.leftUploadColumn {
+  float: left;
+  width: 15%;
+}
+
+.leftCenterColumn {
+  float: left;
+  width: 25%;
+  margin-right: 5%;
+}
+
+.rightCenterColumn {
+  float: left;
+  width: 15%;
+  margin-left: 10%;
+}
+
+.rightUploadColumn {
+  float: right;
+  width: 25%;
+}
+ 
+.uploadButtons {
+  text-align: center;
+  margin-top: 25%;
+}
+
+.styleButtons {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  color: var(--mainYellow);
+  background: transparent;
+  border: 0.05rem solid var(--lightBlue);
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  width: 150px;
+}
+
+.styleButtons:hover {
+  background: var(--lightBlue);
+  color: var(--lightBlue);
+}
+
+.styleButtons:focus {
+  outline: none;
+}
 

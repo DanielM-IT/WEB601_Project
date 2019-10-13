@@ -24,7 +24,7 @@ form input {
     border-radius: 7px;
     background-color: #0083cf ;
     color: white;
-    font-weight: bold;
+    font-weight: bold; 
 }
 
 .button:hover{
