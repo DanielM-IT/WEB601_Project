@@ -68,18 +68,6 @@ body{
 /* End of body styling */
 
 
-/* All footer related styling */
-.footer {
-  height: 15vh;
-  background-color: #232528;
-}
-
-.creditLink {
-  color: #ffa400;
-}
-/* End of footer related styling */
-
-
 /* Titles */
 .text-title{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -148,6 +136,7 @@ body{
 
 .footerContainer {
   min-height: 15vh;
+  clear: both;
 }
 
  .leftColumn {

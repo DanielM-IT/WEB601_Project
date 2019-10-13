@@ -1,3 +1,9 @@
-.creditLink {
+.footer {
+    height: 15vh;
+    background-color: #232528;
     clear: both;
-}
+  }
+  
+  .creditLink {
+    color: #ffa400;
+  }

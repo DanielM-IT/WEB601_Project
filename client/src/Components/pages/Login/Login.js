@@ -12,12 +12,12 @@ export default class LoginPage extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <section className="loginPage">
+      <div className="loginContainer">
+        <section className="loginForm">
           <Title name="User" title="Login" />
           <br />
           <form>
-            <div className='loginForm'>
+            <div className='loginFormFields'>
               <LoginForm submit={this.submit} />
             </div>
           </form>
