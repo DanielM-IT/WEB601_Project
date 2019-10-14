@@ -12,6 +12,7 @@ function checkID(req, res, next) {
     }
 }
 
+// Exporting the variable as a module object.
 module.exports = {
     checkID
 }

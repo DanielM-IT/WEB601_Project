@@ -1,10 +1,10 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 import { BtnContainer } from '../../pageElements/Buttons';
 import './Home.css'
 
 
-export default class Home extends Component {
+export default class Home extends React.Component {
     render() {
         return( 
             <div className="landingPageWrapper">

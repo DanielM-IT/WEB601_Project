@@ -1,4 +1,4 @@
-// These are the equivalents of sql queries. They are usign Knex as the query builder and select all or specific data, add data, update data, and delete data.
+// These are the equivalents of sql queries. They are using Knex as the query builder and select all or specific data, add data, update data, and delete data.
 
 // Lists all the songs. Basically a select all function.
 function listAllSongs(req, res) {
@@ -48,7 +48,7 @@ function postSong(req, res) {
     } = req.app.locals
     const payload = req.body
     // Parsing payload which is the parameters sent from the client as part of the POST request.
-    const mandatoryColumns = [/*'Title' , 'Length', 'Author', 'Genre'*/]
+    const mandatoryColumns = ['Title' , 'Length', 'Author', 'Genre']
     const payloadKeys = Object.keys(payload)
     const mandatoryColumnsExists = mandatoryColumns.every(mc => payloadKeys.includes(mc))
     // Checking if all mandatory columns are filled before posting. If they arent it will return an error.
