@@ -1,5 +1,5 @@
 import React from 'react'
-import './BrowseSongs.css'
+import './BrowseSongsCard.css'
 
 
 export default class Song extends React.Component {

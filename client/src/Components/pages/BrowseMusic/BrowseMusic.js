@@ -1,7 +1,7 @@
 import React from 'react'
 import PageTitle from '../../pageElements/PageTitle'
 import './BrowseMusic.css'
-import Song from '../../data/BrowseSongs'
+import Song from '../../data/BrowseSongsCard'
 
 
 export default class BrowseMusic extends React.Component {

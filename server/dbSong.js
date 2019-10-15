@@ -1,5 +1,5 @@
 // These are the equivalents of sql queries. They are using Knex as the query builder and select all or specific data, add data, update data, and delete data.
-// THey use object destructuring which allows Knex to exact the information from the locals object.
+// THey use object destructuring which allows Knex to extract the information from the locals object.
 
 // Lists all the songs. Basically a select all function.
 function listAllSongs(req, res) {

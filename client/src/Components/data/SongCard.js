@@ -1,20 +1,24 @@
 import React from 'react'
-import './MySongs.css'
+import './SongCard.css'
 
 
 export default class MySongs extends React.Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.deleteSong = this.deleteSong.bind(this)
     }
 
-    deleteSong(e) {
-        e.preventDefault()
-        fetch('http://localhost:4200/api/songs/:SongId', {
+    deleteSong(SongId) {
+        fetch('http://localhost:4200/api/songs/' + SongId, {
             method: 'delete'
-        })
+        }).then(response =>
+            response.json().then(json => {
+                return json
+            })
+        )
+        window.location.reload()
     }
 
 
@@ -22,7 +26,7 @@ export default class MySongs extends React.Component {
         return(
             <div className="songGrid">
             {this.props.songs.map((Song) => (
-               <div className="song" key={Song.ID}>
+               <div className="song" key={Song.SongId}>
                     <h2>{Song.Title}</h2>  
 
                     <div className='details'>
@@ -34,7 +38,7 @@ export default class MySongs extends React.Component {
                     <button className="editButton" /*onClick={}*/>
                         Edit Song
                     </button>
-                    <button className="editButton" onSubmit= {this.deleteSong} >
+                    <button className="editButton" onClick={this.deleteSong.bind(this,Song.SongId)}>
                         Delete Song
                     </button>
                </div> 
