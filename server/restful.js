@@ -1,13 +1,16 @@
+//Accessing the express and cors modules
 const express = require('express');
 const app = express()
-const router = express.Router()
 let cors = require('cors')
+
+// Accessing the router, config and midleware code.
+const router = express.Router()
 const config = require('./config')
 const middleware = require('./middleware')
-const bodyParser = require('body-parser')
 
 
 // Use body-parser to convert our posted data to .json format.
+const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json() 
 
 // Uses Knex to connect to the MySQL database.
@@ -24,14 +27,16 @@ const routes = require('./routes')
 
 // Creates the route for each request type. Each one leads to one of the query functions. The patch, delete and second get all use 
 // middleware as they need to know the data ID to retrieve the correct data.
+
+//Route to get all songs.
 router.get('/songs', routes.songList.listAllSongs);
-
+//Route to get a single song based on the ID.
 router.get('/songs/:SongId', middleware.checkID, routes.songList.listSingleSong);
-
+//Route to POST a new song by creating a new record in the database.
 router.post('/songs', jsonParser, routes.songList.postSong);
-
+// Route to PATCH/update existing song in the daatabase.
 router.patch('/songs/:SongId', jsonParser, middleware.checkID, routes.songList.updateSong)
-
+// Route to DELETE a song from the database.
 router.delete('/songs/:SongId', middleware.checkID, routes.songList.deleteSong)
 
 

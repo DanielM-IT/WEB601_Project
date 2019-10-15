@@ -4,6 +4,20 @@ import './MySongs.css'
 
 export default class MySongs extends React.Component {
 
+    constructor() {
+        super()
+
+        this.deleteSong = this.deleteSong.bind(this)
+    }
+
+    deleteSong(e) {
+        e.preventDefault()
+        fetch('http://localhost:4200/api/songs/:SongId', {
+            method: 'delete'
+        })
+    }
+
+
     render() {
         return(
             <div className="songGrid">
@@ -20,10 +34,10 @@ export default class MySongs extends React.Component {
                     <button className="editButton" /*onClick={}*/>
                         Edit Song
                     </button>
-                    <button className="editButton" /*onClick={}*/>
+                    <button className="editButton" onSubmit= {this.deleteSong} >
                         Delete Song
                     </button>
-               </div>
+               </div> 
             ))}
             </div>
         )

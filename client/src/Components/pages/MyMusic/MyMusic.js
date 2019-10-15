@@ -16,15 +16,13 @@ export default class MyMusic extends React.Component {
 
     componentDidMount() {
         this.getSongs()
-        //this.timer = setInterval(() => this.GetUserBooks(), 10000);
-        //setTimeout(function() {console.log(this.state.books)}, 8000)
     }
 
     getSongs() {
         fetch('http://localhost:4200/api/songs')
 		.then(res => res.json())
 		.then(data => {
-			if(data.code === '404') {
+			if(data.code === '404') { 
 				this.setState({
 					isFetching: false,
 				})

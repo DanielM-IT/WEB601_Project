@@ -2,7 +2,8 @@
 // In this case it uses the ID to do this.
 
 function checkID(req, res, next) {
-
+    // Creates a variable to store the ID. Then checks if the id is an integer before it can be used. Following this is a next() 
+    // which is a function allowing the middleware to execute.
     const id = +req.params.id
 
     if (Number.isInteger(id)) {

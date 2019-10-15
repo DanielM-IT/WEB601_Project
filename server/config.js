@@ -1,4 +1,4 @@
-// Stores the port number to be used in a variable.
+// Stores the specified port number to be used in a variable.
 const APIServerPort = 4200
 
 // Stores the database details where data is being retrieved from and store them in a variable.

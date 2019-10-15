@@ -47,23 +47,25 @@ export default class BrowseMusic extends React.Component {
                 <div className="categoryColumn">
                     <h3>Categories</h3>
                     <ul>
-                        <li>Category 1</li>
+                        <li>Popular Music</li>
                         <br />
-                        <li>Category 2</li>
+                        <li>Blues</li>
                         <br />
-                        <li>Category 3</li>
+                        <li>Classical</li>
                         <br />
-                        <li>Category 4</li>
+                        <li>Country</li>
                         <br />
-                        <li>Category 5</li>
+                        <li>Heavy Metal</li>
                         <br />
-                        <li>Category 6</li>
+                        <li>Hip Hop</li>
                         <br />
-                        <li>Category 7</li>
+                        <li>Jazz</li>
                         <br />
-                        <li>Category 8</li>
+                        <li>Pop</li>
                         <br />
-                        <li>Category 9</li>
+                        <li>Reggae</li>
+                        <br />
+                        <li>Rock</li>
                     </ul>
                 </div>
                 <div className='contentColumn'>
