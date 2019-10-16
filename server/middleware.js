@@ -4,9 +4,9 @@
 function checkID(req, res, next) {
     // Creates a variable to store the ID. Then checks if the id is an integer before it can be used. Following this is a next() 
     // which is a function allowing the middleware to execute.
-    const id = +req.params.id
+    const SongId = +req.params.SongId
 
-    if (Number.isInteger(id)) {
+    if (Number.isInteger(SongId)) {
         next() 
     } else {
         return res.status(400).json('ID must be an integer'); 
