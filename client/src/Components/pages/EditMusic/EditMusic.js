@@ -1,11 +1,9 @@
 import React from 'react'
 import PageTitle from '../../pageElements/PageTitle'
-import {Link} from 'react-router-dom'
-import './MyMusic.css'
-import SongCard from '../../data/SongCard'
+import EditSongCard from '../../data/EditSongCard'
 
 
-export default class MyMusic extends React.Component {
+export default class EditMusic extends React.Component {
     
     constructor(props) {
         super(props)
@@ -66,12 +64,8 @@ export default class MyMusic extends React.Component {
                     </ul>
                 </div>
                 <div className='contentColumn'>
-                    <PageTitle name="My" title="Music" />
-                    <SongCard songs={this.state.songs}/> 
-                    <Link to="/EditMusic"><button className="editButton" > 
-                        Edit Song
-                    </button>
-                    </Link>
+                    <PageTitle name="Edit" title="Music" />
+                    <EditSongCard songs={this.state.songs}/>              
                 </div>
             </div>
         )

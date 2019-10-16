@@ -30,7 +30,7 @@ export default class UploadMusic extends React.Component {
         if (this.validateForm()) {
             let fields = {}
             fields["Title"] = ""
-            fields["Length"] = ""
+            fields["Length"] = "" 
             fields["Author"] = ""
             fields["Genre"] = ""
             this.setState({fields:fields})
@@ -128,12 +128,12 @@ export default class UploadMusic extends React.Component {
                         </div>
 
                         <div className="leftCenterColumn">
-                            <input type="text" name="Title" id="Title" ref={(ref) => {this.Title = ref}} placeholder="Song title.." value={this.state.fields.Title} onChange={this.handleChange} />   
+                            <input type="text" name="Title" id="Title" placeholder="Song title.." value={this.state.fields.Title} onChange={this.handleChange} />   
                             <div className='errorMessage'>{this.state.errors.Title}</div>
                             <br />
                             <br />
                             <br />
-                            <input type="text" name="Length" id="Length" ref={(ref) => {this.Length = ref}} placeholder="00:00:00.." value={this.state.fields.Length} onChange={this.handleChange} /> 
+                            <input type="text" name="Length" id="Length" placeholder="00:00:00.." value={this.state.fields.Length} onChange={this.handleChange} /> 
                             <div className='errorMessage'>{this.state.errors.Length}</div> 
                         </div>
 
@@ -148,12 +148,12 @@ export default class UploadMusic extends React.Component {
                         </div>
 
                         <div className="rightUploadColumn">
-                            <input type="text" name="Author" id="Author" ref={(ref) => {this.Author = ref}} placeholder="Author name.." value={this.state.fields.Author} onChange={this.handleChange} /> 
+                            <input type="text" name="Author" id="Author" placeholder="Author name.." value={this.state.fields.Author} onChange={this.handleChange} /> 
                             <div className='errorMessage'>{this.state.errors.Author}</div> 
                             <br />
                             <br />
                             <br />
-                            <input type="text" name="Genre" id="Genre" ref={(ref) => {this.Genre = ref}} placeholder="Songs genre.." value={this.state.fields.Genre} onChange={this.handleChange} />   
+                            <input type="text" name="Genre" id="Genre" placeholder="Songs genre.." value={this.state.fields.Genre} onChange={this.handleChange} />   
                             <div className='errorMessage'>{this.state.errors.Genre}</div>
                         </div>
                         <br />
