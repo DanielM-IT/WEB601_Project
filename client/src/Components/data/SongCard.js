@@ -7,9 +7,21 @@ export default class MySongs extends React.Component {
     constructor(props) {
         super(props)
 
+        this.updateSong = this.updateSong.bind(this)
         this.deleteSong = this.deleteSong.bind(this)
     }
 
+    updateSong(SongId) {
+        fetch('http://localhost:4200/api/songs/' + SongId, {
+            method: 'patch'
+        }).then(response =>
+            response.json().then(json => {
+                return json
+            })
+        )
+    }
+
+    
     deleteSong(SongId) {
         fetch('http://localhost:4200/api/songs/' + SongId, {
             method: 'delete'
@@ -35,7 +47,7 @@ export default class MySongs extends React.Component {
                     <div className='songLength'>
                         <pre><h3>{Song.Length}</h3></pre>
                     </div>
-                    <button className="editButton" /*onClick={}*/>
+                    <button className="editButton" onClick={this.updateSong.bind(this,Song.SongId)}>
                         Edit Song
                     </button>
                     <button className="editButton" onClick={this.deleteSong.bind(this,Song.SongId)}>
