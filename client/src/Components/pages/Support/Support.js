@@ -99,19 +99,19 @@ export default class Support extends React.Component {
                 <PageTitle name="Support" />
                 <form method="post" name="supportForm" onSubmit= {this.submitSupportForm} >
                     <br />
-                    <label for="firstName">First Name</label>
+                    <label htmlFor="firstName">First Name</label>
                     <input type="text" name="firstName" placeholder="Your first name.." value={this.state.fields.firstName} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.firstName}</div>
                     <br />
-                    <label for="lastName">Last Name</label>
+                    <label htmlFor="lastName">Last Name</label>
                     <input type="text" name="lastName" placeholder="Your last name.." value={this.state.fields.lastName} onChange={this.handleChange} />  
                     <div className='errorMessage'>{this.state.errors.lastName}</div>
                     <br />
-                    <label for="email">Email Address</label>
+                    <label htmlFor="email">Email Address</label>
                     <input type="text" name="email" placeholder="Your email.." value={this.state.fields.email} onChange={this.handleChange} />  
                     <div className='errorMessage'>{this.state.errors.email}</div>
                     <br />
-                    <label for="message">Message</label>
+                    <label htmlFor="message">Message</label>
                     <textarea name="message" placeholder="Enter mesage here.." value={this.state.fields.message} onChange={this.handleChange} />  
                     <div className='errorMessage'>{this.state.errors.message}</div>
                     <input className="submitButton" type="submit" value="Submit" />
