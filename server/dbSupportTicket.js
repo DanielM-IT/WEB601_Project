@@ -7,7 +7,7 @@ function postSupportTicket(req, res) {
     const { knex } = req.app.locals
     const payload = req.body
     // Parsing payload which is the parameters sent from the client as part of the POST request.
-    const mandatoryColumns = [/*'firstName', 'lastName', 'email', 'message'*/]
+    const mandatoryColumns = ['firstName', 'lastName', 'email', 'message']
     const payloadKeys = Object.keys(payload)
     const mandatoryColumnsExists = mandatoryColumns.every(mc => payloadKeys.includes(mc))
     // Checking if all mandatory columns are filled before posting. If they arent it will return an error.

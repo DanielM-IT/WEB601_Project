@@ -42,6 +42,9 @@ router.delete('/songs/:SongId', middleware.checkID, routes.songList.deleteSong)
 // Route to POST a new support ticket.
 router.post('/supportTicket', jsonParser, routes.supportTicket.postSupportTicket)
 
+// Route to POST newly signed up accounts.
+router.post('/account', jsonParser, routes.accounts.postAccount)
+
 
 // Use express to route between the host and the route requested.
 app.use('/api', cors(), router);
