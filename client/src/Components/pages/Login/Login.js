@@ -16,11 +16,11 @@ export default class LoginPage extends React.Component {
         <section className="loginForm">
           <PageTitle name="User" title="Login" />
           <br />
-          <form>
+          <div>
             <div className='loginFormFields'>
               <LoginForm submit={this.submit} />
             </div>
-          </form>
+          </div>
         </section> 
       </div> 
     )

@@ -32,7 +32,6 @@ export default class SignUp extends React.Component {
             fields["lastName"] = ""
             fields["email"] = ""
             fields["phone"] = ""
-            fields["userName"] = ""
             fields["password"] = ""
             this.setState({fields:fields})
             alert("Form submitted")
@@ -94,18 +93,6 @@ export default class SignUp extends React.Component {
             }
         }
 
-        if (!fields["userName"]) {
-            formIsValid = false
-            errors["userName"] = "*Please enter a user name."
-        }
-
-        if (typeof fields["userName"] !== "undefined") {
-            if (!fields["userName"].match(/^[a-zA-Z ]*$/)) {
-                formIsValid = false
-                errors["userName"] = "*Please enter alphabet characters only."
-            }
-        }
-
         if (!fields["password"]) {
             formIsValid = false
             errors["password"] = "*Please enter a password."
@@ -143,9 +130,6 @@ export default class SignUp extends React.Component {
                     <label>Phone</label>
                     <input type="text" name="phone" placeholder="Your phone number.." value={this.state.fields.phone} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.phone}</div>
-                    <label>User Name</label>
-                    <input type="text" name="userName" placeholder="Choose a username.." value={this.state.fields.userName} onChange={this.handleChange} />   
-                    <div className='errorMessage'>{this.state.errors.userName}</div>
                     <label>Password</label>
                     <input type="text" name="password" placeholder="Choose a password.." value={this.state.fields.password} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.password}</div>

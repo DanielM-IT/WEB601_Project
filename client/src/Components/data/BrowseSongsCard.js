@@ -8,7 +8,7 @@ export default class Song extends React.Component {
         return(
             <div className="songGrid">
                 {this.props.songs.map((Song) => (
-               <div className="song" key={Song.ID}>
+               <div className="song" key={Song.SongId}>
                     <h2>{Song.Title}</h2>  
 
                     <div className='details'>

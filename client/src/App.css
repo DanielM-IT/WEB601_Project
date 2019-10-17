@@ -36,7 +36,7 @@ body{
 
 /* Container for body of all pages */
  .container {
-  min-height: 65vh;
+  min-height: 70vh;
   background-color: #54585f;
  }
 
