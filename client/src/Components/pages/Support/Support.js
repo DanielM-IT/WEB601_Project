@@ -33,6 +33,17 @@ export default class Support extends React.Component {
             fields["email"] = ""
             fields["message"] = ""
             this.setState({fields:fields})
+            fetch('http://localhost:4200/api/supportTicket', {
+                method: 'post',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({
+                    "firstName": this.firstName.value,
+                    "lastName": this.lastName.value,
+                    "email": this.email.value,
+                    "message": this.message.value,
+                })
+            })
+            console.log("Ticket has been submitted")
             alert("Form submitted")
         }
     }
@@ -97,22 +108,22 @@ export default class Support extends React.Component {
         return(
             <section className="formBody">
                 <PageTitle name="Support" />
-                <form method="post" name="supportForm" onSubmit= {this.submitSupportForm} >
+                <form name="supportForm" onSubmit= {this.submitSupportForm} >
                     <br />
                     <label htmlFor="firstName">First Name</label>
-                    <input type="text" name="firstName" placeholder="Your first name.." value={this.state.fields.firstName} onChange={this.handleChange} />   
+                    <input type="text" name="firstName" id="firstName" ref={(ref) => {this.firstName = ref}} placeholder="Your first name.." value={this.state.fields.firstName} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.firstName}</div>
                     <br />
                     <label htmlFor="lastName">Last Name</label>
-                    <input type="text" name="lastName" placeholder="Your last name.." value={this.state.fields.lastName} onChange={this.handleChange} />  
+                    <input type="text" name="lastName" id="lastName" ref={(ref) => {this.lastName = ref}} placeholder="Your last name.." value={this.state.fields.lastName} onChange={this.handleChange} />  
                     <div className='errorMessage'>{this.state.errors.lastName}</div>
                     <br />
                     <label htmlFor="email">Email Address</label>
-                    <input type="text" name="email" placeholder="Your email.." value={this.state.fields.email} onChange={this.handleChange} />  
+                    <input type="text" name="email" id="email" ref={(ref) => {this.email = ref}} placeholder="Your email.." value={this.state.fields.email} onChange={this.handleChange} />  
                     <div className='errorMessage'>{this.state.errors.email}</div>
                     <br />
                     <label htmlFor="message">Message</label>
-                    <textarea name="message" placeholder="Enter mesage here.." value={this.state.fields.message} onChange={this.handleChange} />  
+                    <textarea name="message" id="message" ref={(ref) => {this.message = ref}} placeholder="Enter mesage here.." value={this.state.fields.message} onChange={this.handleChange} />  
                     <div className='errorMessage'>{this.state.errors.message}</div>
                     <input className="submitButton" type="submit" value="Submit" />
                 </form>

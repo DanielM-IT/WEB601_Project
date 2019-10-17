@@ -39,6 +39,9 @@ router.patch('/songs/:SongId', jsonParser, middleware.checkID, routes.songList.u
 // Route to DELETE a song from the database.
 router.delete('/songs/:SongId', middleware.checkID, routes.songList.deleteSong)
 
+// Route to POST a new support ticket.
+router.post('/supportTicket', jsonParser, routes.supportTicket.postSupportTicket)
+
 
 // Use express to route between the host and the route requested.
 app.use('/api', cors(), router);
