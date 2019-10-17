@@ -11,30 +11,6 @@ export default class MySongs extends React.Component {
         this.deleteSong = this.deleteSong.bind(this)
     }
 
-    componentDidMount() {
-        this.getSong()
-    }
-
-    getSong(SongId) {
-        fetch('http://localhost:4200/api/songs/' + SongId)
-		.then(res => res.json())
-		.then(data => {
-			if(data.code === '404') { 
-				this.setState({
-					isFetching: false,
-				})
-			} else {
-                this.setState({
-                isFetching: true,
-                songs: data, 
-            })
-            }
-		})
-		.catch(error => {
-		   console.log(error)
-        })	
-    }
-
     deleteSong(SongId) {
         fetch('http://localhost:4200/api/songs/' + SongId, {
             method: 'delete'

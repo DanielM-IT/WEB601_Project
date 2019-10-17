@@ -12,7 +12,7 @@ export default class MySongs extends React.Component {
         }
 
         this.handleChange = this.handleChange.bind(this)
-        this.updateSong = this.updateSong.bind(this)
+        // this.updateSong = this.updateSong.bind(this)
     }
 
     handleChange(e) {
@@ -24,26 +24,26 @@ export default class MySongs extends React.Component {
     }
 
 
-    updateSong(SongId) {
-        let fields = {}
-        fields["Title"] = ''
-        fields["Length"] = ''
-        fields["Author"] = ''
-        fields["Genre"] = ''
-        this.setState({fields:fields})
+    // updateSong(SongId) {
+    //     let fields = {}
+    //     fields["Title"] = ''
+    //     fields["Length"] = ''
+    //     fields["Author"] = ''
+    //     fields["Genre"] = ''
+    //     this.setState({fields:fields})
 
-        fetch('http://localhost:4200/api/songs/' + SongId, {
-            method: 'patch',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify({
-                "Title": this.Title.value,
-                "Length": this.Length.value,
-                "Author": this.Author.value,
-                "Genre": this.Genre.value,
+    //     fetch('http://localhost:4200/api/songs/' + SongId, {
+    //         method: 'patch',
+    //         headers: {'Content-Type':'application/json'},
+    //         body: JSON.stringify({
+    //             "Title": this.Title.value,
+    //             "Length": this.Length.value,
+    //             "Author": this.Author.value,
+    //             "Genre": this.Genre.value,
 
-            })
-        })
-    }
+    //         })
+    //     })
+    // }
 
     
     render() {
@@ -59,7 +59,7 @@ export default class MySongs extends React.Component {
                     <br/> 
                     <h2>Length:</h2> <input type="text" name="Length" id="Length" placeholder={Song.Length} value={this.state.fields.Length} onChange={this.handleChange} />   
 
-                    <button className="editButton" onClick={this.updateSong.bind(this,Song.SongId)}>
+                    <button className="editButton" /*onClick={this.updateSong.bind(this,Song.SongId)}*/>
                         Edit Song
                     </button>
                </div> 
