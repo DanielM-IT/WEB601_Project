@@ -7,11 +7,7 @@ function listAllSongs(req, res) {
     knex
         .select('SongId','Title', 'Author', 'Length', 'Genre')
         .from('account')
-<<<<<<< HEAD
 
-=======
-       
->>>>>>> a379b086721e865fc2694b6e4fd90ab3ae952031
         .then(data => res.status(200).json(data))
         // To catch any errors that might arise
         .catch(error => res.status(500).json(error))
@@ -29,11 +25,7 @@ function listSingleSong(req, res) {
         .where({
             SongId: `${SongId}`
         })
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> a379b086721e865fc2694b6e4fd90ab3ae952031
         // Response which is something known as promise based.
         .then(data => {
             if (data.length > 0) {
@@ -111,14 +103,4 @@ module.exports = {
     postSong,
     updateSong,
     deleteSong
-<<<<<<< HEAD
 }
-=======
-}
-
-
-
-
-
-
->>>>>>> a379b086721e865fc2694b6e4fd90ab3ae952031

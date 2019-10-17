@@ -35,11 +35,7 @@ export default class MyAccount extends React.Component {
                                     <label>Email:</label>
                                     <br />  
                                     <label>Phone:</label>
-<<<<<<< HEAD
                                     <br /> 
-=======
-                                    <br />  
->>>>>>> a379b086721e865fc2694b6e4fd90ab3ae952031
                                     <label>Password:</label>
                                     <br /> 
                                     <br /> 
@@ -54,11 +50,7 @@ export default class MyAccount extends React.Component {
                                     <label>Email:</label>
                                     <br />  
                                     <label>Phone:</label>
-<<<<<<< HEAD
                                     <br /> 
-=======
-                                    <br />  
->>>>>>> a379b086721e865fc2694b6e4fd90ab3ae952031
                                     <label>Password:</label>
                                     <br /> 
                                     <br /> 

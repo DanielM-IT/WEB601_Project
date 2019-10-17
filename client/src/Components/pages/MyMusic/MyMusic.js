@@ -1,8 +1,7 @@
 import React from 'react'
 import PageTitle from '../../pageElements/PageTitle'
-import {Link} from 'react-router-dom'
 import './MyMusic.css'
-import SongCard from '../../data/SongCard'
+import MySongs from '../../data/SongCard'
 
 
 export default class MyMusic extends React.Component {
@@ -67,11 +66,7 @@ export default class MyMusic extends React.Component {
                 </div>
                 <div className='contentColumn'>
                     <PageTitle name="My" title="Music" />
-                    <SongCard songs={this.state.songs}/> 
-                    <Link to="/EditMusic"><button className="editButton" > 
-                        Edit Song
-                    </button>
-                    </Link>
+                    <MySongs songs={this.state.songs}/>              
                 </div>
             </div>
         )
