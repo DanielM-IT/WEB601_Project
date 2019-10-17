@@ -35,8 +35,6 @@ export default class MyAccount extends React.Component {
                                     <label>Email:</label>
                                     <br />  
                                     <label>Phone:</label>
-                                    <br /> 
-                                    <label>User Name:</label>
                                     <br />  
                                     <label>Password:</label>
                                     <br /> 
@@ -52,8 +50,6 @@ export default class MyAccount extends React.Component {
                                     <label>Email:</label>
                                     <br />  
                                     <label>Phone:</label>
-                                    <br /> 
-                                    <label>User Name:</label>
                                     <br />  
                                     <label>Password:</label>
                                     <br /> 
