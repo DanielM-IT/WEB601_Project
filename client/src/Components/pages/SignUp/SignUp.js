@@ -8,7 +8,7 @@ export default class SignUp extends React.Component {
     constructor() {
         super()
         this.state = {
-            fields: {},
+            fields: {firstName: '', lastName: '', email: '', phone: '', password: ''},
             errors: {}
         }
 
