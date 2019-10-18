@@ -49,8 +49,27 @@ function postAccount(req, res) {
     }
 }
 
+// Updating an account by email
+function updateAccount(req, res) {
+    const { knex } = req.app.locals
+    const { email } = req.params
+    const payload = req.body
+    knex('account')
+        .where('email', email)
+        .update(payload)
+        .then(response => {
+            if (response) {
+                res.status(200).json(`Email with ${email} updated.`)
+            } else {
+                return res.status(404).json(`Email with ${email} not found.`);
+            }
+        })
+        .catch(error => res.status(500).json(error))
+}
+
 // Exports all the functions as a module object.
 module.exports = {
     listSingleAccount,
-    postAccount    
+    postAccount,
+    updateAccount    
 }

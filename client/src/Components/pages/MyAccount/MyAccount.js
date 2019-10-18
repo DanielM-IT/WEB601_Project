@@ -79,7 +79,7 @@ export default class MyAccount extends React.Component {
                                     <br /> 
                                 </div>
                                 <hr />
-                                <Link to='/EditAccount'>
+                                <Link to='/EditAccount' accounts={this.state.accounts}>
                                     <input className="editButton" type="submit" value="Edit Details" />
                                 </Link>
                             </form>

@@ -48,6 +48,8 @@ router.post('/supportTicket', jsonParser, routes.supportTicket.postSupportTicket
 router.get('/account/:email', routes.accounts.listSingleAccount)
 // Route to POST newly signed up accounts.
 router.post('/account', jsonParser, routes.accounts.postAccount)
+// Route to PATCH/update an existing account in the database.
+router.put('/account/:email', jsonParser, routes.accounts.updateAccount)
 
 
 // Use express to route between the host and the route requested.

@@ -26,6 +26,7 @@ form input {
     color: white;
     font-weight: bold;
     position: relative;
+    height: 37px;
 }
 
 .confirmButton:hover{

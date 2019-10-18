@@ -35,6 +35,19 @@ export default class MyAccount extends React.Component {
             fields["phone"] = "" /*Display database account data here */
             fields["password"] = "" /*Display database account data here */
             this.setState({fields:fields})
+            fetch('http://localhost:4200/api/account/7ebed7@gmail.com', {
+                method: 'put',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({
+                    "firstName": this.firstName.value,
+                    "lastName": this.lastName.value,
+                    "email": this.email.value,
+                    "phone": this.phone.value,
+                    "password": this.password.value,
+                })
+            })
+            console.log("Account has been edited.")
+
             alert("Form submitted")
         }
     }
@@ -87,12 +100,12 @@ export default class MyAccount extends React.Component {
             errors["phone"] = "*Please enter your phone number."
         }
 
-        if (typeof fields["phone"] !== "undefined") {
-            if (!fields["phone"].match(/^[0-9]{10}$/)) {
-                formIsValid = false
-                errors["phone"] = "*Please enter a valid phone number."
-            }
-        }
+        // if (typeof fields["phone"] !== "undefined") {
+        //     if (!fields["phone"].match(/^[0-9]{10}$/)) {
+        //         formIsValid = false
+        //         errors["phone"] = "*Please enter a valid phone number."
+        //     }
+        // }
 
         if (!fields["password"]) {
             formIsValid = false
@@ -120,19 +133,19 @@ export default class MyAccount extends React.Component {
                 <form method="post" name="editAccountForm" onSubmit= {this.submitAccountForm} >
                     <br /> 
                     <label>First Name</label> 
-                    <input type="text" name="firstName" value={this.state.fields.firstName} onChange={this.handleChange} />   
+                    <input type="text" name="firstName" ref={(ref) => {this.firstName = ref}} value={this.state.fields.firstName} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.firstName}</div>
                     <label>Last Name</label> 
-                    <input type="text" name="lastName" value={this.state.fields.lastName} onChange={this.handleChange} />   
+                    <input type="text" name="lastName" ref={(ref) => {this.lastName = ref}} value={this.state.fields.lastName} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.lastName}</div>
                     <label>Email Address</label>
-                    <input type="text" name="email" value={this.state.fields.email} onChange={this.handleChange} />   
+                    <input type="text" name="email" ref={(ref) => {this.email = ref}} value={this.state.fields.email} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.email}</div>
                     <label>Phone</label>
-                    <input type="text" name="phone" value={this.state.fields.phone} onChange={this.handleChange} />   
+                    <input type="text" name="phone" ref={(ref) => {this.phone = ref}} value={this.state.fields.phone} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.phone}</div>
                     <label>Password</label>
-                    <input type="text" name="password" value={this.state.fields.password} onChange={this.handleChange} />   
+                    <input type="text" name="password" ref={(ref) => {this.password = ref}} value={this.state.fields.password} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.password}</div>
                     <br />
                     <input type="submit" className="confirmButton" value="Confirm" />
