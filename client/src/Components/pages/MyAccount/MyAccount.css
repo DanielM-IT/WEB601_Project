@@ -1,14 +1,14 @@
 .pagesListColumn {
-    width: 30%;
+    width: 25%;
     background-color: #54585f; 
     float: left;
     color: var(--mainWhite);
     min-height: 70vh;
-    padding: 3%;
+    padding: 5%;
   }
  
   .accountContentColumn {
-   width: 70%;
+   width: 75%;
    background-color: var(--mainWhite);
    padding: 3%;
    float: right;
