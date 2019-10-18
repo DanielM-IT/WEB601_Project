@@ -10,10 +10,11 @@
 .uploadSong {
   border: solid 1px var(--mainYellow);
   width: 70%;
-  margin-top: 5%;
+  margin-top: 3%;
   margin-left: 15%;
   margin-right: 15%;
   padding: 9% 9% 6% 9%;
+  border-radius: 30px;
 }
 
 .leftUploadColumn {

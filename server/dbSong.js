@@ -19,7 +19,7 @@ function listPromotionalSongs(req, res) {
         .select('SongId','Title', 'Author', 'Length', 'Genre')
         .from('song')
         .orderBy('SongId', 'desc')
-        .limit(9)
+        .limit(6)
 
         .then(data => res.status(200).json(data))
         // To catch any errors that might arise

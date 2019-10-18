@@ -10,14 +10,13 @@ export default class Song extends React.Component {
                 {this.props.songs.map((Song) => (
                <div className="song" key={Song.SongId}>
                     <h2>{Song.Title}</h2>  
-
-                    <div className='details'>
-                        <pre><h3>{Song.Author}    •   {Song.Genre}</h3></pre>
-                    </div>
+                    <input className="slider" type="range" />
                     <div className='songLength'>
                         <pre><h3>{Song.Length}</h3></pre>
                     </div>
-                    <input className="slider" type="range" />
+                    <div className='details'>
+                        <pre><h3>{Song.Author}    •   {Song.Genre}</h3></pre>
+                    </div>
                </div>
             ))}
             </div>

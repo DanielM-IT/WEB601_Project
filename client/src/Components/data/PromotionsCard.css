@@ -11,22 +11,23 @@
 
 .song {
     border-radius: 5px;
-    padding: 20px;
     margin: 4%;
     width: 23%;
     background-color: rgb(185, 185, 185);
     text-align: center;
   }
+  
+  .promotionSongLength {
+    width: 100%;
+  }
 
-  .details {
+  .promotionSongDetails {
     float: left;
+    margin-left:5%;
   }
 
-  .songLength {
-    float: right;
-  }
-
-  .sliderBox {
-      margin-left: 40%;
-      width: 90%;
+  .promotionSongSlider {
+    float: left;
+    width: 55%;
+    margin: 1% 5%;
   }

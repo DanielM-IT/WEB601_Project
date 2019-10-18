@@ -9,11 +9,12 @@
     margin: 4%;
     width: 23%;
     background-color: rgb(185, 185, 185);
-    clear: both;
   }
 
   .details {
     float: left;
+    width: 100%;
+    text-align: left;
   }
 
   .songLength {
@@ -41,4 +42,5 @@
   .slider {
     float: left;
     width: 70%;
+    margin-top: 4%;
   }
