@@ -37,7 +37,6 @@ export default class Promotion extends React.Component {
 
                     <div className='details'>
                         <pre><img src='../../icons/musical-notes-symbols.png' alt="musicIcon" className="songIcon"/>  
-                        <div>
                             <Slider 
                                 className="sliderBox"
                                 min={0}
@@ -47,7 +46,6 @@ export default class Promotion extends React.Component {
                                 onChange={this.handleChange}
                                 onChangeComplete={this.handleChangeComplete}
                             />
-                        </div>
                         <h3>{Promotion.Author}    •   {Promotion.Genre}</h3></pre>
                     </div>
                     <div className='songLength'>

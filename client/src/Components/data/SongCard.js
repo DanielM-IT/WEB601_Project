@@ -35,12 +35,9 @@ export default class MySongs extends React.Component {
                     <div className='songLength'>
                         <pre><h3>{Song.Length}</h3></pre>
                     </div>
-                    <button className="editButton" /*onClick={}*/>
-                        Edit Song
-                    </button>
-                    <button className="editButton" onClick={this.deleteSong.bind(this,Song.SongId)}>
-                        Delete Song
-                    </button>
+                    <input className="slider" type="range" />
+                    <input type="submit" className="editBtn" value="Edit Song" /*onClick={}*/ /> 
+                    <input type="submit" className="deleteBtn" value="Delete Song" onClick={this.deleteSong.bind(this,Song.SongId)}/> 
                </div> 
             ))}
             </div>

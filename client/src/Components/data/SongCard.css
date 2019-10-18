@@ -9,7 +9,7 @@
     margin: 4%;
     width: 23%;
     background-color: rgb(185, 185, 185);
-    text-align: center;
+    clear: both;
   }
 
   .details {
@@ -20,10 +20,25 @@
     float: right;
   }
 
-  .editButton {
-    margin-right: 2%;
+  .editBtn {
+    width: 40%;
+    margin: 3% 2%;
+    border-radius: 7px;
+    background-color: #0083cf ;
+    color: white;
+    font-weight: bold; 
   }
 
-  .deleteButton {
-    margin-left: 2%;
+  .deleteBtn {
+    width: 40%;
+    margin: 3% 2%;
+    border-radius: 7px;
+    background-color: #0083cf ;
+    color: white;
+    font-weight: bold; 
+  }
+
+  .slider {
+    float: left;
+    width: 70%;
   }

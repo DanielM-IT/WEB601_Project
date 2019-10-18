@@ -19,3 +19,8 @@
   .songLength {
     float: right;
   }
+
+  .slider {
+    float: left;
+    width: 70%;
+  }

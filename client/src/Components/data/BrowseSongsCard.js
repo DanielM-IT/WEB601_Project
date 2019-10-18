@@ -17,6 +17,7 @@ export default class Song extends React.Component {
                     <div className='songLength'>
                         <pre><h3>{Song.Length}</h3></pre>
                     </div>
+                    <input className="slider" type="range" />
                </div>
             ))}
             </div>
