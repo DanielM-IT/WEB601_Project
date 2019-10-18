@@ -9,7 +9,7 @@ export default class UploadMusic extends React.Component {
     constructor() {
         super()
         this.state = {
-            fields: {},
+            fields: {Title: '', Length: '', Author: '', Genre: ''},
             errors: {}
         }
 

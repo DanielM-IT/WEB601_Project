@@ -8,7 +8,7 @@ export default class Support extends React.Component {
     constructor() {
         super()
         this.state = {
-            fields: {},
+            fields: {firstName: '', lastName: '', email: '', message: ''},
             errors: {}
         }
 
@@ -111,7 +111,7 @@ export default class Support extends React.Component {
                 <form name="supportForm" onSubmit= {this.submitSupportForm} >
                     <br />
                     <label htmlFor="firstName">First Name</label>
-                    <input type="text" name="firstName" id="firstName" ref={(ref) => {this.firstName = ref}} placeholder="Your first name.." value={this.state.fields.firstName} onChange={this.handleChange} />   
+                    <input type="text" name="firstName" id="firstName" ref={(ref) => {this.firstName = ref}} placeholder="Your first name.." defaultValue={this.state.fields.firstName} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.firstName}</div>
                     <br />
                     <label htmlFor="lastName">Last Name</label>
