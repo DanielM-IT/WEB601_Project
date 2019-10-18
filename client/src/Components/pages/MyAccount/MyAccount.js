@@ -2,9 +2,46 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import PageTitle from '../../pageElements/PageTitle'
 import './MyAccount.css'
+import DisplayAccountCard from '../../data/DisplayAccountCard'
 
 
 export default class MyAccount extends React.Component {
+
+    constructor(props) {
+        super(props)
+            this.state = ({
+                isFetching: false,
+                accounts: []
+            })
+    }
+
+    componentDidMount() {
+        this.getAccount()
+    }
+
+    getAccount() {
+        fetch('http://localhost:4200/api/account/7ebed7@gmail.com')
+		.then(res => res.json())
+		.then(data => { 
+			if(data.code === '404') {
+				this.setState({
+					isFetching: false,
+				})
+			} else {
+                this.setState({
+                isFetching: true,
+                accounts: data, 
+            })
+            }
+		})
+		.catch(error => {
+		   console.log(error)
+        })	
+    }
+
+
+
+
     render() {
         return(
             <div className="myAccountWrapper">
@@ -27,31 +64,17 @@ export default class MyAccount extends React.Component {
                             <form>
                                 <div className="leftColumn">
                                     <br />
-                                    <br />
-                                    <label>First Name:</label>
-                                    <br />
-                                    <label>Last Name:</label>
-                                    <br />
-                                    <label>Email:</label>
-                                    <br />  
-                                    <label>Phone:</label>
-                                    <br /> 
-                                    <label>Password:</label>
-                                    <br /> 
+                                    <h3>First Name:</h3>
+                                    <h3>Last Name:</h3>
+                                    <h3>Email:</h3>
+                                    <h3>Phone:</h3>
+                                    <h3>Password:</h3>
                                     <br /> 
                                </div>
                                 <div className="rightColumn">
                                     <br />
                                     <br />
-                                    <label>First Name:</label>
-                                    <br />
-                                    <label>Last Name:</label>
-                                    <br />
-                                    <label>Email:</label>
-                                    <br />  
-                                    <label>Phone:</label>
-                                    <br /> 
-                                    <label>Password:</label>
+                                    <DisplayAccountCard accounts={this.state.accounts}/>
                                     <br /> 
                                     <br /> 
                                 </div>

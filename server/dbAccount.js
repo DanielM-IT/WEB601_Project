@@ -1,6 +1,31 @@
 // These are the equivalents of sql queries. They are using Knex as the query builder and select all or specific data, add data, update data, and delete data.
 // THey use object destructuring which allows Knex to extract the information from the locals object.
 
+// Get an account by email
+function listSingleAccount(req, res) {
+    // Destructuring 
+    const { knex } = req.app.locals
+    const { email } = req.params
+    knex
+        // DB Query
+        .select('email','firstName', 'lastName', 'phone', 'password')
+        .from('account')
+        .where({
+            email: `${email}`
+        })
+        
+        // Response which is something known as promise based.
+        .then(data => {
+            if (data.length > 0) {
+                return res.status(200).json(data)
+            } else {
+                return res.status(404).json(`Account with email ${email} does not exist`);
+            }
+        })
+        .catch(error => res.status(500).json(error))
+}
+
+
 // Add an account to the DB
 function postAccount(req, res) {
     const { knex } = req.app.locals
@@ -26,5 +51,6 @@ function postAccount(req, res) {
 
 // Exports all the functions as a module object.
 module.exports = {
-    postAccount,
+    listSingleAccount,
+    postAccount    
 }

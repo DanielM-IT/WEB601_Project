@@ -44,6 +44,8 @@ router.delete('/songs/:SongId', middleware.checkID, routes.songList.deleteSong)
 // Route to POST a new support ticket.
 router.post('/supportTicket', jsonParser, routes.supportTicket.postSupportTicket)
 
+// Route to get a single account by email
+router.get('/account/:email', routes.accounts.listSingleAccount)
 // Route to POST newly signed up accounts.
 router.post('/account', jsonParser, routes.accounts.postAccount)
 
