@@ -16,8 +16,6 @@ export default class BrowseMusic extends React.Component {
 
     componentDidMount() {
         this.getSongs()
-        //this.timer = setInterval(() => this.GetUserBooks(), 10000);
-        //setTimeout(function() {console.log(this.state.books)}, 8000)
     }
 
     getSongs() {

@@ -2,9 +2,46 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import { BtnContainer } from '../../pageElements/Buttons';
 import './Home.css'
+import PromotionsCard from '../../data/PromotionsCard'
 
 
 export default class Home extends React.Component {
+
+    constructor(props) {
+        super(props) 
+            this.state = ({
+                isFetching: false,
+                songs: []
+            })
+    }
+
+    componentDidMount() {
+        this.getPromotionalSongs()
+    }
+
+    getPromotionalSongs() {
+        fetch('http://localhost:4200/api/promotionalSongs')
+        .then(res => res.json())
+        .then(data => {
+			if(data.code === '404') {
+				this.setState({
+					isFetching: false,
+				})
+			} else {
+                this.setState({
+                isFetching: true,
+                songs: data, 
+            })
+            }
+        })
+        .catch(error => {
+            console.log(error)
+         })	
+ 
+    }
+
+
+
     render() {
         return( 
             <div className="landingPageWrapper">
@@ -21,27 +58,13 @@ export default class Home extends React.Component {
                         </Link>
                     </div>
                 </div>
-                <div>
-                    <img src='../../icons/searchBar.png' alt="tempSearchBarImg" className="tempSearchBar" /> 
-                </div>
-                <div className="homeGrid">
-                    <div className="promotionItem">
-                        <h2>promotions here</h2>
+                <div className="homeBody">
+                    <div>
+                        <img src='../../icons/searchBar.png' alt="tempSearchBarImg" className="tempSearchBar" /> 
                     </div>
-                    <div className="promotionItem">
-                        <h2>promotions here</h2>
-                    </div>
-                    <div className="promotionItem">
-                        <h2>promotions here</h2>
-                    </div>
-                    <div className="promotionItem">
-                        <h2>promotions here</h2>
-                    </div>
-                    <div className="promotionItem">
-                        <h2>promotions here</h2>
-                    </div>
-                    <div className="promotionItem">
-                        <h2>promotions here</h2>
+                    <div className="promotions">
+                        <h1>Latest Music</h1>
+                        <PromotionsCard songs={this.state.songs}/>
                     </div>
                 </div>
             </div>

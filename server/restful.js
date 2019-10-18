@@ -1,5 +1,5 @@
 //Accessing the express and cors modules
-const express = require('express');
+const express = require('express')
 const app = express()
 let cors = require('cors')
 
@@ -29,11 +29,13 @@ const routes = require('./routes')
 // middleware as they need to know the data ID to retrieve the correct data.
 
 //Route to get all songs.
-router.get('/songs', routes.songList.listAllSongs);
+router.get('/songs', routes.songList.listAllSongs)
 //Route to get a single song based on the ID.
-router.get('/songs/:SongId', middleware.checkID, routes.songList.listSingleSong);
+router.get('/songs/:SongId', middleware.checkID, routes.songList.listSingleSong)
+// Route to get the 8 most recent songs to promote.
+router.get('/promotionalSongs', routes.songList.listPromotionalSongs)
 //Route to POST a new song by creating a new record in the database.
-router.post('/songs', jsonParser, routes.songList.postSong);
+router.post('/songs', jsonParser, routes.songList.postSong)
 // Route to PATCH/update existing song in the daatabase.
 router.patch('/songs/:SongId', jsonParser, middleware.checkID, routes.songList.updateSong)
 // Route to DELETE a song from the database.
@@ -47,11 +49,11 @@ router.post('/account', jsonParser, routes.accounts.postAccount)
 
 
 // Use express to route between the host and the route requested.
-app.use('/api', cors(), router);
+app.use('/api', cors(), router)
 
 
 
 // Tells the server to start listening on the port specified in the config.js file.
 app.listen(config.APIServerPort, () => {
-    console.log(`Server started on port ${config.APIServerPort}`);
-});
+    console.log(`Server started on port ${config.APIServerPort}`)
+})

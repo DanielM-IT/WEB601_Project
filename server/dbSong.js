@@ -13,6 +13,20 @@ function listAllSongs(req, res) {
         .catch(error => res.status(500).json(error))
 }
 
+function listPromotionalSongs(req, res) {
+    const { knex } = req.app.locals
+    knex
+        .select('SongId','Title', 'Author', 'Length', 'Genre')
+        .from('song')
+        .orderBy('SongId', 'desc')
+        .limit(9)
+
+        .then(data => res.status(200).json(data))
+        // To catch any errors that might arise
+        .catch(error => res.status(500).json(error))
+}
+
+
 // A function that specifies a condition to retrieve a single song using its ID.
 function listSingleSong(req, res) {
     // Destructuring 
@@ -99,6 +113,7 @@ function deleteSong(req, res) {
 // Exports all the functions as a module object.
 module.exports = {
     listAllSongs,
+    listPromotionalSongs,
     listSingleSong,
     postSong,
     updateSong,

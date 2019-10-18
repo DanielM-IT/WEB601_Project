@@ -1,4 +1,4 @@
-.featureImage {
+  .featureImage {
     width: 100%;
     height: auto;
    }
@@ -21,19 +21,21 @@
     bottom: 40%;
     left: 45%;
   }
-  
-   .homeGrid {
-     display: grid;
-     height: 500px;
-     width: 100%;
-     grid-template:  50% 50% 50% / 16% 16% 16% ;
-     grid-gap: 10%;
-     padding-left: 15%;
-     padding-right: 10%;
-     padding-bottom: 10%;
-   }
-  
+
    .promotionItem {
     border: solid 1px var(--mainYellow);
+   }
+  
+   .landingPageWrapper h1 {
+     text-align: center;
+   }
+
+   .homeBody {
+    min-height: 70vh;
+  }
+    
+   .promotions {
+    padding: 3%;
+    min-height: 70vh;
    }
   
