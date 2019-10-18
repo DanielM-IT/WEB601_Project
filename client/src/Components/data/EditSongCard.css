@@ -1,0 +1,8 @@
+.cancelBtn {
+    width: 40%;
+    margin: 3% 2%;
+    border-radius: 7px;
+    background-color: #0083cf ;
+    color: white;
+    font-weight: bold; 
+  }

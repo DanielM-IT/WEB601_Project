@@ -13,6 +13,8 @@ import SignUp from './Components/pages/SignUp/SignUp'
 import MyMusic from './Components/pages/MyMusic/MyMusic'
 import UploadMusic from './Components/pages/UploadMusic/UploadMusic'
 import EditAccount from './Components/pages/EditAccount/EditAccount'
+import EditMusic from './Components/pages/EditMusic/EditMusic'
+
 
 
 const App = () => (
@@ -31,6 +33,7 @@ const App = () => (
               <Route path="/MyMusic" component={MyMusic} />
               <Route path="/UploadMusic" component={UploadMusic} />
               <Route path="/EditAccount" component={EditAccount} />
+              <Route path="/EditMusic" component={EditMusic} />
               <Route component={Default} />
             </Switch>
         </div>

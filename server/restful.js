@@ -37,7 +37,7 @@ router.get('/promotionalSongs', routes.songList.listPromotionalSongs)
 //Route to POST a new song by creating a new record in the database.
 router.post('/songs', jsonParser, routes.songList.postSong)
 // Route to PATCH/update existing song in the daatabase.
-router.patch('/songs/:SongId', jsonParser, middleware.checkID, routes.songList.updateSong)
+router.put('/songs/:SongId', jsonParser, middleware.checkID, routes.songList.updateSong)
 // Route to DELETE a song from the database.
 router.delete('/songs/:SongId', middleware.checkID, routes.songList.deleteSong)
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './SongCard.css'
 
 
@@ -35,7 +36,10 @@ export default class MySongs extends React.Component {
                     <div className='details'>
                         <pre><h3>{Song.Author}    •   {Song.Genre}</h3></pre>
                     </div>
-                    <input type="submit" className="editBtn" value="Edit Song" /*onClick={}*/ /> 
+                    <Link songs={Song.SongId} to='/EditMusic'>
+                        <input type="submit" className="editBtn" value="Edit Song" /> 
+                        
+                    </Link>
                     <input type="submit" className="deleteBtn" value="Delete Song" onClick={this.deleteSong.bind(this,Song.SongId)}/> 
                </div> 
             ))}
