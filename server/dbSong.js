@@ -51,7 +51,7 @@ function postSong(req, res) {
             .insert(payload)
             .then(response => {
                 if (response) {
-                    res.status(201).json('Song record created')
+                    res.status(200).json('Song record created')
                 }})
             .catch(error => res.status(500).json(error))
 
@@ -70,7 +70,7 @@ function updateSong(req, res) {
         .update(payload)
         .then(response => {
             if (response) {
-                res.status(204).json()
+                res.status(200).json(`Song with id ${SongId} updated.`)
             } else {
                 return res.status(404).json(`Song with id ${SongId} not found.`);
             }

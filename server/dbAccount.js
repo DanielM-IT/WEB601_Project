@@ -1,7 +1,7 @@
 // These are the equivalents of sql queries. They are using Knex as the query builder and select all or specific data, add data, update data, and delete data.
 // THey use object destructuring which allows Knex to extract the information from the locals object.
 
-// Add a song to the DB
+// Add an account to the DB
 function postAccount(req, res) {
     const { knex } = req.app.locals
     const payload = req.body

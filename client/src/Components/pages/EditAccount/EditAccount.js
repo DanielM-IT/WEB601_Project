@@ -9,7 +9,7 @@ export default class MyAccount extends React.Component {
     constructor() {
         super()
         this.state = {
-            fields: {},
+            fields: {firstName: '', lastName: '', email: '', phone: '', password: ''},
             errors: {}
         }
 
@@ -33,7 +33,6 @@ export default class MyAccount extends React.Component {
             fields["lastName"] = "" /*Display database account data here */
             fields["email"] = "" /*Display database account data here */
             fields["phone"] = "" /*Display database account data here */
-            fields["userName"] = "" /*Display database account data here */
             fields["password"] = "" /*Display database account data here */
             this.setState({fields:fields})
             alert("Form submitted")
@@ -95,18 +94,6 @@ export default class MyAccount extends React.Component {
             }
         }
 
-        if (!fields["userName"]) {
-            formIsValid = false
-            errors["userName"] = "*Please enter a user name."
-        }
-
-        if (typeof fields["userName"] !== "undefined") {
-            if (!fields["userName"].match(/^[a-zA-Z ]*$/)) {
-                formIsValid = false
-                errors["userName"] = "*Please enter alphabet characters only."
-            }
-        }
-
         if (!fields["password"]) {
             formIsValid = false
             errors["password"] = "*Please enter a password."
@@ -144,9 +131,6 @@ export default class MyAccount extends React.Component {
                     <label>Phone</label>
                     <input type="text" name="phone" value={this.state.fields.phone} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.phone}</div>
-                    <label>User Name</label>
-                    <input type="text" name="userName" value={this.state.fields.userName} onChange={this.handleChange} />   
-                    <div className='errorMessage'>{this.state.errors.userName}</div>
                     <label>Password</label>
                     <input type="text" name="password" value={this.state.fields.password} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.password}</div>
