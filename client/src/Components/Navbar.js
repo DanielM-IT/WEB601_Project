@@ -8,6 +8,7 @@ import './Navbar.css'
 
 export default class Navbar extends Component {
     render() {
+        // BtnContainer is a button created as a component for easy re-use.
         return(
                 <nav className= "navbar">
                     <div>
@@ -32,7 +33,7 @@ export default class Navbar extends Component {
                             </Link>
                         </li> 
                     </ul> 
-              
+                
                     <Link to="/Login" style={{float: 'right'}}>
                         <BtnContainer>
                             <span>Login</span>

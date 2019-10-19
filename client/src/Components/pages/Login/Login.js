@@ -10,6 +10,8 @@ export default class LoginPage extends React.Component {
     console.log(data)
   }
 
+
+  // Awaiting authentication to be added.
   render() {
     return (
       <div className="loginWrapper">

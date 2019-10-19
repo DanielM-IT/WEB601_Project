@@ -6,7 +6,8 @@ import DisplayAccountCard from '../../data/DisplayAccountCard'
 
 
 export default class MyAccount extends React.Component {
-
+    // Created constructor method which passes properties(props). It sets the initial state which is 
+    // ‘isFetching: false’ and creates an array set to empty.
     constructor(props) {
         super(props)
             this.state = ({
@@ -15,10 +16,14 @@ export default class MyAccount extends React.Component {
             })
     }
 
+    // Mount a new component which calles the getSongs() method.)
     componentDidMount() {
         this.getAccount()
     }
 
+    // Method that fetches a single account records from the database and places them into the accounts array.
+    // It also responds with the response in json form. I have specified the email key here temporarily until authentication
+    // allows me to retrieve the key of the currently logged in account.
     getAccount() {
         fetch('http://localhost:4200/api/account/7ebed7@gmail.com')
 		.then(res => res.json())
@@ -40,8 +45,8 @@ export default class MyAccount extends React.Component {
     }
 
 
-
-
+    // Renders my categories and content columns. The content column will be populated with 
+    // the retrieved accounts data.
     render() {
         return(
             <div className="myAccountWrapper">

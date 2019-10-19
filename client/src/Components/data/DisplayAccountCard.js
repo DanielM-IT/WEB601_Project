@@ -3,6 +3,8 @@ import React from 'react'
 
 export default class DisplayAccountCard extends React.Component {
 
+    // Maps each account from the account array to a specific record. This then takes the email as its key.
+    // Following this each value from the selected record is placed into a header to be displayed.
     render() {
         return(
             <div className="accountGrid">

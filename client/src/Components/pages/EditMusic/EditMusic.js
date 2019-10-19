@@ -5,7 +5,8 @@ import './EditMusic.css'
 
 
 export default class EditMusic extends React.Component {
-    
+    // Created constructor method which passes properties(props). It sets the initial state which is 
+    // ‘isFetching: false’ and creates an array set to empty.
     constructor(props) {
         super(props)
             this.state = ({
@@ -14,10 +15,13 @@ export default class EditMusic extends React.Component {
             })
     }
 
+    // Mount a new component which calles the getSongs() method.)
     componentDidMount() {
         this.getSong()
     }
 
+    // Method that fetches a single song from the database using the specified ID and places it into the songs array.
+    // It also responds with the response in json form. 
     getSong() {
         fetch('http://localhost:4200/api/songs/1')
 		.then(res => res.json())
@@ -39,6 +43,8 @@ export default class EditMusic extends React.Component {
     }
 
 
+    // Rendersthe content. The content area will be populated with 
+    // the retrieved song.
     render() {
         return(
             <div className="editContainer">

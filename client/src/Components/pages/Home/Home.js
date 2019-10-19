@@ -6,7 +6,8 @@ import PromotionsCard from '../../data/PromotionsCard'
 
 
 export default class Home extends React.Component {
-
+    // Created constructor method which passes properties(props). It sets the initial state which is 
+    // ‘isFetching: false’ and creates an array set to empty.
     constructor(props) {
         super(props) 
             this.state = ({
@@ -15,10 +16,13 @@ export default class Home extends React.Component {
             })
     }
 
+    // Mount a new component which calles the getSongs() method.)
     componentDidMount() {
         this.getPromotionalSongs()
     }
 
+    // Method that fetches all the song records from the database and places them into the songs array.
+    // It also respondse with respon in json form.
     getPromotionalSongs() {
         fetch('http://localhost:4200/api/promotionalSongs')
         .then(res => res.json())
@@ -41,7 +45,8 @@ export default class Home extends React.Component {
     }
 
 
-
+    // Renders my categories and content columns. The promotions section will be populated with 
+    // the six retrieved records.
     render() {
         return( 
             <div className="landingPageWrapper">

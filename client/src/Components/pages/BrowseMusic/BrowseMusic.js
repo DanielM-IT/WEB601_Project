@@ -5,7 +5,8 @@ import BrowseSongsCard from '../../data/BrowseSongsCard'
 
 
 export default class BrowseMusic extends React.Component {
-    
+    // Created constructor method which passes properties(props). It sets the initial state which is 
+    // ‘isFetching: false’ and creates an array set to empty.
     constructor(props) {
         super(props)
             this.state = ({
@@ -14,10 +15,13 @@ export default class BrowseMusic extends React.Component {
             })
     }
 
+    // Mount a new component which calles the getSongs() method.)
     componentDidMount() {
         this.getSongs()
     }
 
+    // Method that fetches all the song records from the database and places them into the songs array.
+    // It also respondse with respon in json form.
     getSongs() {
         fetch('http://localhost:4200/api/songs')
 		.then(res => res.json())
@@ -39,6 +43,8 @@ export default class BrowseMusic extends React.Component {
     }
 
 
+    // Renders my categories and content column. The content column will be populated with 
+    // all retrieved records.
     render() {
         return(
             <div className="browseMusicWrapper">

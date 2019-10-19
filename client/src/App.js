@@ -14,9 +14,10 @@ import MyMusic from './Components/pages/MyMusic/MyMusic'
 import UploadMusic from './Components/pages/UploadMusic/UploadMusic'
 import EditAccount from './Components/pages/EditAccount/EditAccount'
 import EditMusic from './Components/pages/EditMusic/EditMusic'
+// Import each of the above pages or components to have their path routed in the switch.
 
-
-
+// Variable containing the reacte-router-dom's switch and routes switched between. Each route component is assigned a path.
+// This is a variable not a class here. The reason being that there is no need to use lifecycle hooks or set the state here.
 const App = () => (
   <div className="container">
         <div className="header">
@@ -43,7 +44,7 @@ const App = () => (
       </div>
 )  
 
-
+// The variable is exported.
 export default App;
 
 

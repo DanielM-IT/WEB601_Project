@@ -5,18 +5,20 @@ import './UploadMusic.css'
 
 
 export default class UploadMusic extends React.Component {
-
+    // Created constructor method which sets the initial state of the input fields and the errors property.
     constructor() {
         super()
         this.state = {
             fields: {Title: '', Length: '', Author: '', Genre: ''},
             errors: {}
         }
-
+        // Binds the below functions and their parameters to an object that can be used in the field 
+        // properties inside the render() function.
         this.handleChange = this.handleChange.bind(this)
         this.submitUploadMusicForm = this.submitUploadMusicForm.bind(this)
     }
 
+    // Method to update the properties state upon any change made by the user to a UI property.
     handleChange(e) {
         let fields = this.state.fields
         fields[e.target.name] = e.target.value
@@ -25,6 +27,8 @@ export default class UploadMusic extends React.Component {
         })
     }
 
+    // Method in which if validation passes will create a variable with empty fields. These will then 
+    // have their state instructed to change to the current state of the constructors fields.
     submitUploadMusicForm(e) {
         e.preventDefault()
         if (this.validateForm()) {
@@ -34,6 +38,9 @@ export default class UploadMusic extends React.Component {
             fields["Author"] = ""
             fields["Genre"] = ""
             this.setState({fields:fields})
+            // The request type and controller is then fetched through the following url. The request method is specified
+            // along with the content type specified as being converted to json format before being posted into 
+            // the database table.
             fetch('http://localhost:4200/api/songs', {
                 method: 'post',
                 headers: {'Content-Type':'application/json'},
@@ -45,10 +52,13 @@ export default class UploadMusic extends React.Component {
                 })
             })
             console.log("Song has been added")
+            // Finishes with a message which lets the user know that the posting of data was successful.
             alert("Form submitted")
         }
     }
 
+    // This method contains validations for each field to ensure no field is left blank and also to ensure the
+    // correct type of data is inserted into each field.
     validateForm() {
         let fields = this.state.fields
         let errors = {}
@@ -77,7 +87,6 @@ export default class UploadMusic extends React.Component {
                 errors["Length"] = "*Please enter a valid time."
             }
         }
-
 
         if (!fields["Author"]) {
             formIsValid = false
@@ -109,7 +118,11 @@ export default class UploadMusic extends React.Component {
         return formIsValid
     }
 
-
+    // Here the page is rendered with the needed methods. To the <form> is added an onSubmit={} attribute and called the 
+    // method containing the fetching here. In each of the input fields is created three properties. The first is a reference to the 
+    // corresponding field, the second a value property which takes the current state of the corresponding field and the third an onChange={} 
+    // method which calls the handleChange() method. The change handle will allow the state of each field to be update after every change made 
+    // by the user in an input field.
     render() {
         return(
             <div className="uploadMusicWrapper">
