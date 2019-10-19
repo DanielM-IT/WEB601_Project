@@ -6,6 +6,7 @@ function checkID(req, res, next) {
     // which is a function allowing the middleware to execute.
     const SongId = +req.params.SongId
 
+    // Checks that the ID has the correct datatype. If not then error.
     if (Number.isInteger(SongId)) {
         next() 
     } else {

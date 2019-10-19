@@ -1,9 +1,11 @@
 // These are the equivalents of sql queries. They are using Knex as the query builder and select all or specific data, add data, update data, and delete data.
-// THey use object destructuring which allows Knex to extract the information from the locals object.
+// They use object destructuring which allows Knex to extract the information from the locals object.
 
 // Lists all the songs. Basically a select all function.
 function listAllSongs(req, res) {
+    // Runs the query req through app.locals which in the restful.js accesses the database connection within the config.js.
     const { knex } = req.app.locals
+    // DB Query that selects all values from a table.
     knex
         .select('SongId','Title', 'Author', 'Length', 'Genre')
         .from('song')
@@ -14,7 +16,9 @@ function listAllSongs(req, res) {
 }
 
 function listPromotionalSongs(req, res) {
+    // Runs the query req through app.locals which in the restful.js accesses the database connection within the config.js.
     const { knex } = req.app.locals
+    // DB Query that selects values based on a condition.
     knex
         .select('SongId','Title', 'Author', 'Length', 'Genre')
         .from('song')
@@ -29,11 +33,12 @@ function listPromotionalSongs(req, res) {
 
 // A function that specifies a condition to retrieve a single song using its ID.
 function listSingleSong(req, res) {
-    // Destructuring 
+    // Runs the query req through app.locals which in the restful.js accesses the database connection within the config.js.
     const { knex } = req.app.locals
+    // Variable that takes the value passed through the parameters which is then used to compare against the condition in the where clause.
     const { SongId } = req.params
+    // DB Query that selects values based on a condition.
     knex
-        // DB Query
         .select('SongId','Title', 'Author', 'Length', 'Genre')
         .from('song')
         .where({
@@ -53,14 +58,18 @@ function listSingleSong(req, res) {
 
 // Add a song to the DB
 function postSong(req, res) {
+    // Runs the query req through app.locals which in the restful.js accesses the database connection within the config.js.
     const { knex } = req.app.locals
+    // Takes the data from the body of the request and places it in a variable.
     const payload = req.body
-    // Parsing payload which is the parameters sent from the client as part of the POST request.
+    // Variable to store information on which values are mandatory when posting.
     const mandatoryColumns = ['Title' , 'Length', 'Author', 'Genre']
+    // Parsing payload which is the parameters sent from the client as part of the POST request.
     const payloadKeys = Object.keys(payload)
     const mandatoryColumnsExists = mandatoryColumns.every(mc => payloadKeys.includes(mc))
     // Checking if all mandatory columns are filled before posting. If they arent it will return an error.
     if (mandatoryColumnsExists) {
+        // Payload is inserted then receives a response dependent on whether an error was caught or not.
         knex('song')
             .insert(payload)
             .then(response => {
@@ -76,9 +85,13 @@ function postSong(req, res) {
 
 // Updating a song by id
 function updateSong(req, res) {
+    // Runs the query req through app.locals which in the restful.js accesses the database connection within the config.js.
     const { knex } = req.app.locals
+    // Variable that takes the value passed through the parameters which is then used to compare against the condition in the where clause.
     const { SongId } = req.params
+    // Takes the data from the body of the request and places it in a variable.
     const payload = req.body
+    // Payload is updated then receives a response dependent on whether an error was caught or not.
     knex('song')
         .where('SongId', SongId)
         .update(payload)
@@ -94,9 +107,11 @@ function updateSong(req, res) {
 
 // Deleting a song by id
 function deleteSong(req, res) {
+    // Runs the query req through app.locals which in the restful.js accesses the database connection within the config.js.
     const { knex } = req.app.locals
+    // Variable that takes the value passed through the parameters which is then used to compare against the condition in the where clause.
     const { SongId } = req.params
-
+    // Deletes any records that match the condition in the where clause. If done primary key properly it should only be one record.
     knex('song')
         .where('SongId', SongId)
         .del()

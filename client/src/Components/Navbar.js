@@ -19,9 +19,7 @@ export default class Navbar extends Component {
                     
                     <ul className="navbar-item">
                         <li>
-                            <label className="navbar-link">
-                                <Dropdown />
-                            </label>  
+                            <label className="navbar-link"><Dropdown /></label>  
                         </li>  
                         <li>   
                             <Link to="/Support" className="navbar-link">
