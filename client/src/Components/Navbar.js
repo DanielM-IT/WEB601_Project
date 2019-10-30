@@ -11,7 +11,7 @@ export default class Navbar extends Component {
         // BtnContainer is a button created as a component for easy re-use.
         return(
                 <nav className= "navbar">
-                    <div>
+                    <div className="navbarSiteLogo">
                     <Link to='/'>
                         <img src='../../icons/musical-notes-symbols.png' alt="musicSite" className="navbar-logo"/>
                     </Link>
