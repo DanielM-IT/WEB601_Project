@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import SearchField from "react-search-field";
 import { BtnContainer } from '../../pageElements/Buttons';
 import './Home.css'
 import PromotionsCard from '../../data/PromotionsCard'
@@ -52,8 +53,8 @@ export default class Home extends React.Component {
             <div className="landingPageWrapper">
                 <div className="featureContainer">
                     <img src='../../images/black_business_technology.jpg' alt="featureMic" className="featureImage" /> 
-                    <div className="websitePurposeText">
-                        <h2>Website purpose here!</h2>
+                    <div className="text">
+                        <h2>Upload your songs for free today and show the <br/> music community what you can do!</h2>
                     </div>
                     <div className="callToAction">
                         <Link to="/UploadMusic">
@@ -64,8 +65,19 @@ export default class Home extends React.Component {
                     </div>
                 </div>
                 <div className="homeBody">
-                    <div>
-                        <img src='../../icons/searchBar.png' alt="tempSearchBarImg" className="tempSearchBar" /> 
+                    <div className="search-container">
+                        <SearchField 
+                            className="search-bar" 
+                            placeholder="Search..."
+                            // onChange={onChange}
+                            searchText="Enter keyword here.." />     
+                        <div className="callToAction">
+                            <Link to="/UploadMusic">
+                                <BtnContainer>
+                                    Upload Music
+                                </BtnContainer>
+                            </Link>
+                    </div>               
                     </div>
                     <div className="promotions">
                         <h1>Latest Music</h1>

@@ -1,34 +1,56 @@
-  .featureImage {
+   .featureContainer {
+     position: relative;
+     display: inline-block;
+  }
+
+  .featureContainer .text {
+   position: absolute;
+   top: 35%;
+   left: 0;
+   right: 0;
+   margin: 0 auto;
+   color: #aaa9ad;
+   text-align: center;
+  }
+ 
+  .featureContainer .text h2 {
+  font-size: xx-large;
+  line-height: 1.5;
+  }
+
+  .featureContainer .callToAction {
+    position: absolute;
+    top: 70%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;;
+  }
+  
+ .featureImage {
     width: 100%;
     height: auto;
    }
   
-   .tempSearchBar {
-     margin: 0 auto;
-     display: block;
-     background-color: #232528;
-   }
-  
-  .websitePurposeText {
-    position: absolute;
-    top: 45%;
-    left: 43%;
-    color: red;
-  }
-  
-  .callToAction {
-    position: absolute;
-    bottom: 40%;
-    left: 45%;
+  .search-container {
+    position: relative;
+    display: inline-block;        
+    display: flex;
+    flex-direction: row;
   }
 
-   .promotionItem {
-    border: solid 1px var(--mainYellow);
-   }
-  
-   .landingPageWrapper h1 {
+  .search-container .search-bar {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;;
+  }
+
+  .landingPageWrapper h1 {
      text-align: center;
-   }
+  }
 
    .homeBody {
     min-height: 70vh;
