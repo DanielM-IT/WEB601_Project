@@ -38,6 +38,8 @@ body{
  .container {
   min-height: 70vh;
   background-color: #54585f;
+  max-width: 1920px !important;
+  padding: 0;
  }
 
 

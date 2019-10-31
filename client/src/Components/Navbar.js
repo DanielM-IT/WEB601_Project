@@ -1,51 +1,95 @@
-import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import React, { useState } from 'react';
 import {BtnContainer} from './pageElements/Buttons'
-import Dropdown from './pageElements/Dropdown';
-import './Navbar.css'
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } 
+  from 'reactstrap';
+ import './Navbar.css'
 
 
+const MenuBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-export default class Navbar extends Component {
-    render() {
-        // BtnContainer is a button created as a component for easy re-use.
-        return(
-                <nav className= "navbar">
-                    <div>
-                    <Link to='/'>
-                        <img src='../../icons/musical-notes-symbols.png' alt="musicSite" className="navbar-logo"/>
+  const toggle = () => setIsOpen(!isOpen);
+
+  return (
+    <div>
+      <Navbar light expand="md">
+        <NavbarBrand href="/">                        
+            <img src='../../icons/musical-notes-symbols.png' alt="musicSite" className="navbar-logo"/>
+        </NavbarBrand>
+        <NavItem>
+            <h1 className="navbarBrand"><strong>Tunique</strong></h1>
+        </NavItem>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+                <Link to="/BrowseMusic" className="navbar-link">
+                    Browse Music
+                </Link>
+            </NavItem>
+            <NavItem>
+                <Link to="/Support" className="navbar-link">
+                    Support
+                </Link>
+            </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Options
+              </DropdownToggle>
+              <DropdownMenu className="dropdownBackground" right>
+                <DropdownItem>
+                    <Link to="/MyAccount" className="navbar-link">
+                        My Account
                     </Link>
-                    </div>
-                    
-                    
-                    <ul className="navbar-item">
-                        <li>
-                            <label className="navbar-link"><Dropdown /></label>  
-                        </li>  
-                        <li>   
-                            <Link to="/Support" className="navbar-link">
-                                Support
-                            </Link>
-                        </li>  
-                        <li>
-                            <Link to="/BrowseMusic" className="navbar-link">
-                                Browse Music
-                            </Link>
-                        </li> 
-                    </ul> 
-                
-                    <Link to="/Login" style={{float: 'right'}}>
-                        <BtnContainer>
-                            <span>Login</span>
-                        </BtnContainer>
+                </DropdownItem>
+                <DropdownItem>
+                    <Link to="/UploadMusic" className="navbar-link">
+                        Upload Music
                     </Link>
-                    <Link to="/SignUp" style={{float: 'right'}}>
-                        <BtnContainer>
-                            <span>SignUp</span>
-                        </BtnContainer>
-                    </Link>   
-                </nav>
-        )
-    }
+                </DropdownItem>
+                <DropdownItem>
+                    <Link to="/MyMusic" className="navbar-link">
+                        My Music
+                    </Link>
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>
+                    <Link to="" className="navbar-link">
+                        Log Out
+                    </Link>
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+            <NavItem>
+                <Link to="/Login">
+                    <BtnContainer>
+                        <span>Login</span>
+                    </BtnContainer>
+                </Link>
+            </NavItem>
+            <NavItem>
+                <Link to="/SignUp">
+                    <BtnContainer>
+                        <span>SignUp</span>
+                    </BtnContainer>
+                </Link>   
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </div>
+  );
 }
 
+export default MenuBar;

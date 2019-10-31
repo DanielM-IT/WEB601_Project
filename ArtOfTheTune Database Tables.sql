@@ -35,7 +35,10 @@ VALUES ('Daniel', 'McCracken', '7ebed7@gmail.com', 0226188948, 'allmine'), ('Jor
 
 
 INSERT INTO Song(Title,Length,Author,Genre)
-VALUES ('Drums', '00:03:21', 'Daniel', 'classical'), ('Piano', '00:06:33', 'Calida', 'classical');
+VALUES ('Song1', '00:03:21', 'Daniel', 'classical'),('Song2', '00:06:33', 'Calida', 'jazz'),
+('Song3', '00:04:13', 'Tom', 'blues'),('Song4', '00:16:35', 'Arine', 'reggae'),
+('Song5', '00:23:16', 'Sedie', 'classical'),('Song6', '00:45:56', 'Matthew', 'pop'),
+('Song7', '00:01:33', 'Greg', 'rock'),('Song8', '00:57:01', 'Suzzanne', 'hip hop');
 
 
 

@@ -1,31 +1,21 @@
-.navbar {
-    padding: 2%;
-  }
-  
   .navbar-logo {
-    height: 80px;
     width: 100px;
     float: left;
+    margin: 4px 20px 4px 4px;
   }
-  
-  .navbar-item {
-  float: left;
-  }
-  
+    
   .navbar-link{
     padding-left: 20px;
     padding-right: 20px;
-    color: var(--mainWhite)!important;
+    color: brown;
     font-size: 1.3rem;
-    float: right;
   }
-  
-  .navbar ul li {
-    float: right;
+
+  .navbarBrand {
+    color: black;
   }
-  
-  .dropdown ul li {
-    display: block;
+
+  .dropdownBackground {
+    background-color: rgb(185, 185, 185) !important;
   }
-  
   
