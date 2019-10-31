@@ -24,7 +24,7 @@ const MenuBar = () => {
   return (
     <div>
       <Navbar light expand="md">
-        <NavbarBrand href="/">                        
+        <NavbarBrand href="/" className="logo-container">                        
             <img src='../../icons/musical-notes-symbols.png' alt="musicSite" className="navbar-logo"/>
         </NavbarBrand>
         <NavItem>
@@ -33,57 +33,57 @@ const MenuBar = () => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            <NavItem>
+            <NavItem className="link-container">
                 <Link to="/BrowseMusic" className="navbar-link">
-                    Browse Music
+                    Browse
                 </Link>
             </NavItem>
-            <NavItem>
-                <Link to="/Support" className="navbar-link">
+            <NavItem className="link-container">
+                <Link to="/Support" className="navbar-link"Support>
                     Support
                 </Link>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
+              <DropdownToggle nav caret className="navbar-dropdown">
+                <span className="navbar-link">Account</span>
               </DropdownToggle>
               <DropdownMenu className="dropdownBackground" right>
                 <DropdownItem>
-                    <Link to="/MyAccount" className="navbar-link">
+                    <Link to="/MyAccount" className="dropdown-link">
                         My Account
                     </Link>
                 </DropdownItem>
                 <DropdownItem>
-                    <Link to="/UploadMusic" className="navbar-link">
+                    <Link to="/UploadMusic" className="dropdown-link">
                         Upload Music
                     </Link>
                 </DropdownItem>
                 <DropdownItem>
-                    <Link to="/MyMusic" className="navbar-link">
+                    <Link to="/MyMusic" className="dropdown-link">
                         My Music
                     </Link>
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
-                    <Link to="" className="navbar-link">
+                    <Link to="/" className="dropdown-link">
                         Log Out
                     </Link>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-            <NavItem>
+            <NavItem className="navbar-buttons">
                 <Link to="/Login">
                     <BtnContainer>
                         <span>Login</span>
                     </BtnContainer>
                 </Link>
             </NavItem>
-            <NavItem>
+            <NavItem className="navbar-buttons">
                 <Link to="/SignUp">
                     <BtnContainer>
                         <span>SignUp</span>
                     </BtnContainer>
-                </Link>   
+                </Link>
             </NavItem>
           </Nav>
         </Collapse>

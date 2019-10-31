@@ -1,21 +1,54 @@
+  .logo-container {
+    margin: 10px 0px 10px 10px;
+  }
+  
   .navbar-logo {
-    width: 100px;
+    width: 110px;
+    height: 100px;
     float: left;
-    margin: 4px 20px 4px 4px;
+    margin: 4px;
   }
     
-  .navbar-link{
-    padding-left: 20px;
-    padding-right: 20px;
-    color: brown;
-    font-size: 1.3rem;
-  }
-
   .navbarBrand {
     color: black;
   }
 
   .dropdownBackground {
-    background-color: rgb(185, 185, 185) !important;
+    background-color: #aaa9ad !important;
+  }
+
+  .ml-auto {
+    display: flex;
+    flex-direction: row;
   }
   
+  .link-container {
+    margin-top: 27px;
+  }
+  
+  .navbar-link{
+    padding: 0px 15px;
+    color: #e2e2e3  !important;
+    font-size: 1.3rem;
+  }
+
+  .navbar-link :hover {
+    color: #aaa9ad !important; 
+  }
+
+  .navbar-dropdown {
+    color: brown;
+    font-size: 1.3rem;
+    margin-top: 20px;
+  }
+
+  .dropdown-link {
+    color: black;
+    font-size: 1.3rem;
+  }
+
+  .navbar-buttons{
+    margin-top: 20px;
+    color: brown;
+    font-size: 1.3rem;
+  }

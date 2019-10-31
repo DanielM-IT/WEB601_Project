@@ -1,5 +1,5 @@
 import React from 'react'
-import './PageElement.css'
+import './PageTitle.css'
 
 export default function PageTitle({ name, title }) {
     return (
