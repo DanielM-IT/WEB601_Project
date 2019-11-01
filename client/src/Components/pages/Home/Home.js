@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import SearchField from "react-search-field";
+import { MDBIcon } from "mdbreact";
 import { BtnContainer } from '../../pageElements/Buttons';
 import './Home.css'
 import PromotionsCard from '../../data/PromotionsCard'
@@ -66,18 +66,18 @@ export default class Home extends React.Component {
                 </div>
                 <div className="homeBody">
                     <div className="search-container">
-                        <SearchField 
-                            className="search-bar" 
-                            placeholder="Search..."
-                            // onChange={onChange}
-                            searchText="Enter keyword here.." />     
-                        <div className="callToAction">
-                            <Link to="/UploadMusic">
-                                <BtnContainer>
-                                    Upload Music
-                                </BtnContainer>
-                            </Link>
-                    </div>               
+                        <form>
+                            <div className="search-bar">
+                                <input type="text" placeholder="Search" aria-label="Search" />
+                            </div>
+                            {/* <div className="callToAction">
+                                <Link to="/UploadMusic">
+                                    <BtnContainer>
+                                        Upload Music
+                                    </BtnContainer>
+                                </Link>
+                            </div>                */}
+                        </form>      
                     </div>
                     <div className="promotions">
                         <h1>Latest Music</h1>

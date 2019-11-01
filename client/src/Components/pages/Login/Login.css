@@ -1,5 +1,5 @@
 .loginWrapper {
-    min-height: 55vh;
+    min-height: 65vh;
 }
 
 .loginForm { 
@@ -7,7 +7,7 @@
     text-align: center;
     padding: 2.5%;
     width: 460px;
-    margin: 8% auto auto auto;
+    margin: 5% auto auto auto;
     background-color: var(--mainWhite);
     border-radius: 25px;
 }

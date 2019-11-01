@@ -11,13 +11,13 @@ export default class Song extends React.Component {
             <div className="songGrid">
                 {this.props.songs.map((Song) => (
                <div className="song" key={Song.SongId}>
-                    <h2>{Song.Title}</h2>  
+                    <h3>{Song.Title}</h3>  
                     <input className="slider" type="range" />
                     <div className='songLength'>
-                        <pre><h3>{Song.Length}</h3></pre>
+                        <pre><p>{Song.Length}</p></pre>
                     </div>
                     <div className='details'>
-                        <pre><h3>{Song.Author}    •   {Song.Genre}</h3></pre>
+                        <pre><p><strong>{Song.Author}    •   {Song.Genre}</strong></p></pre>
                     </div>
                </div>
             ))}

@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="example@example.com"
+                        placeholder="example@example.com.."
                         value={data.email}
                         onChange={this.onChange}
                         />
@@ -60,7 +60,7 @@ class LoginForm extends React.Component {
                         type="password"
                         id="password"
                         name="password" 
-                        placeholder="Password1"
+                        placeholder="Password.."
                         value={data.password}
                         onChange={this.onChange}
                         />

@@ -69,15 +69,14 @@ export default class MyAccount extends React.Component {
                             <form>
                                 <div className="leftColumn">
                                     <br />
-                                    <h3>First Name:</h3>
-                                    <h3>Last Name:</h3>
-                                    <h3>Email:</h3>
-                                    <h3>Phone:</h3>
-                                    <h3>Password:</h3>
+                                    <h4>First Name:</h4>
+                                    <h4>Last Name:</h4>
+                                    <h4>Email:</h4>
+                                    <h4>Phone:</h4>
+                                    <h4>Password:</h4>
                                     <br /> 
                                </div>
                                 <div className="rightColumn">
-                                    <br />
                                     <br />
                                     <DisplayAccountCard accounts={this.state.accounts}/>
                                     <br /> 

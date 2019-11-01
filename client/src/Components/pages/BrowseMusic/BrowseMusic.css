@@ -15,3 +15,7 @@
    min-height: 70vh;
   }
  
+  .contentColumn h1{
+    text-align: center;
+  }
+ 

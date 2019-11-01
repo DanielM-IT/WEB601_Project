@@ -34,12 +34,21 @@
   
   .search-container {
     position: relative;
-    display: inline-block;        
     display: flex;
     flex-direction: row;
   }
 
   .search-container .search-bar {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: 4% auto;
+    text-align: center;;
+    width: 200px;
+  }
+
+  .search-container .callToAction {
     position: absolute;
     top: 0%;
     left: 0;
@@ -57,6 +66,7 @@
   }
     
    .promotions {
+    margin-top: 10%;
     padding: 3%;
     min-height: 70vh;
    }

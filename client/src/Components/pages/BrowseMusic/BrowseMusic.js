@@ -51,6 +51,7 @@ export default class BrowseMusic extends React.Component {
                 <div className="categoryColumn">
                     <h3>Categories</h3>
                     <ul>
+                        <br/>
                         <li>Popular Music</li>
                         <br />
                         <li>Blues</li>

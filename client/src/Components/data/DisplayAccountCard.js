@@ -10,11 +10,11 @@ export default class DisplayAccountCard extends React.Component {
             <div className="accountGrid">
                 {this.props.accounts.map((DisplayAccountCard) => (
                <div className="account" key={DisplayAccountCard.email}>
-                    <h3>{DisplayAccountCard.firstName}</h3>  
-                    <h3>{DisplayAccountCard.lastName}</h3>
-                    <h3>{DisplayAccountCard.email}</h3>
-                    <h3>{DisplayAccountCard.phone}</h3>
-                    <h3>{DisplayAccountCard.password}</h3>
+                    <h4>{DisplayAccountCard.firstName}</h4>  
+                    <h4>{DisplayAccountCard.lastName}</h4>
+                    <h4>{DisplayAccountCard.email}</h4>
+                    <h4>{DisplayAccountCard.phone}</h4>
+                    <h4>{DisplayAccountCard.password}</h4>
                </div>
             ))}
             </div>

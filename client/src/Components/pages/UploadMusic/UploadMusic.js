@@ -70,7 +70,7 @@ export default class UploadMusic extends React.Component {
         }
 
         if (typeof fields["Title"] !== "undefined") {
-            if (!fields["Title"].match(/^[a-zA-Z ]*$/)) {
+            if (!fields["Title"].match(/^[a-z A-Z 0-9]*$/)) {
                 formIsValid = false
                 errors["Title"] = "*Please enter alphabet characters only."
             }
@@ -135,15 +135,12 @@ export default class UploadMusic extends React.Component {
                             <br />
                             <br />
                             <br />
-                            <br />
-                            <br />
                             <label>Length</label>
                         </div>
 
                         <div className="leftCenterColumn">
                             <input type="text" name="Title" id="Title" ref={(ref) => {this.Title = ref}} placeholder="Song title.." value={this.state.fields.Title} onChange={this.handleChange} />   
                             <div className='errorMessage'>{this.state.errors.Title}</div>
-                            <br />
                             <br />
                             <br />
                             <input type="text" name="Length" id="Length" ref={(ref) => {this.Length = ref}} placeholder="00:00:00.." value={this.state.fields.Length} onChange={this.handleChange} /> 
@@ -155,8 +152,6 @@ export default class UploadMusic extends React.Component {
                             <br />
                             <br />
                             <br />
-                            <br />
-                            <br />
                             <label>Genre</label>
                         </div>
 
@@ -165,11 +160,9 @@ export default class UploadMusic extends React.Component {
                             <div className='errorMessage'>{this.state.errors.Author}</div> 
                             <br />
                             <br />
-                            <br />
                             <input type="text" name="Genre" id="Genre" ref={(ref) => {this.Genre = ref}} placeholder="Songs genre.." value={this.state.fields.Genre} onChange={this.handleChange} />   
                             <div className='errorMessage'>{this.state.errors.Genre}</div>
                         </div>
-                        <br />
                         <br />
                         <br />
 
