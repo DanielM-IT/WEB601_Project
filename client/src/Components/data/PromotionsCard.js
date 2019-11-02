@@ -15,12 +15,12 @@ export default class Promotion extends React.Component {
                     <div className='promotionSongLength'>
                         <img src='../../icons/musical-notes-symbols.png' alt="musicIcon" className="songIcon"/>  
                         <input className="promotionSongSlider" type="range" />
-                        <pre><h3>{Promotion.Length}</h3></pre>
+                        <pre><p>{Promotion.Length}</p></pre>
                     </div>
                     <div className='promotionSongDetails'>
-                        <pre><h3>{Promotion.Author}    •   {Promotion.Genre}</h3></pre>
+                        <pre><p><strong>{Promotion.Author}    •   {Promotion.Genre}</strong></p></pre>
                     </div>
-               </div>
+               </div> 
             ))}
             </div>
         )
