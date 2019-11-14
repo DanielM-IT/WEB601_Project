@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import { MDBIcon } from "mdbreact";
 import { BtnContainer } from '../../pageElements/Buttons';
 import './Home.css'
 import PromotionsCard from '../../data/PromotionsCard'
