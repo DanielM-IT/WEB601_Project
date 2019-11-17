@@ -2,7 +2,10 @@
     color: #ffa400;
   }
 
-  .footerContainer {
-    min-height: 15vh;
-    clear: both;
+  .leftFooterColumn {
+    padding-left: 7%;
+  }
+
+  .list-item {
+    color: var(--mainWhite);
   }

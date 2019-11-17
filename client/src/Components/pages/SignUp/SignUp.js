@@ -56,6 +56,7 @@ export default class SignUp extends React.Component {
             console.log("Account has been created.")
             // Finishes with a message which lets the user know that the posting of data was successful.
             alert("Form submitted")
+            
         }
     }
 
@@ -161,7 +162,7 @@ export default class SignUp extends React.Component {
                     <input type="text" name="password" id="password" ref={(ref) => {this.password = ref}} placeholder="Choose a password.." value={this.state.fields.password} onChange={this.handleChange} />   
                     <div className='errorMessage'>{this.state.errors.password}</div>
                     <br />
-                    <input type="submit" className="button" value="Sign Up" /> 
+                       <input type="submit" className="button" value="Sign Up" /> 
                 </form>
             </div>
         )
