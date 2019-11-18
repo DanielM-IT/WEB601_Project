@@ -12,14 +12,14 @@ function success(message) {
     }
 }
 
-function success(message) {
+function error(message) {
     return {
-        type: alertConstants.SUCCESS, message
+        type: alertConstants.ERROR, message
     }
 }
         
-function success(message) {
+function clear(message) {
     return {
-        type: alertConstants.SUCCESS, message
+        type: alertConstants.CLEAR, message
     }
 }       
