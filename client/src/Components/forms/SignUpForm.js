@@ -31,8 +31,6 @@ export default class SignUpForm extends React.Component {
     // have their state instructed to change to the current state of the constructors fields.
     submitSignUpForm(e) {
         e.preventDefault()
-        this.props.userSignupRequest(this.state)
-
         if (this.validateForm()) {
             let fields = {}
             fields["firstName"] = ""
