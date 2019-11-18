@@ -39,7 +39,7 @@ const MenuBar = () => {
                 </Link>
             </NavItem>
             <NavItem className="link-container">
-                <Link to="/Support" className="navbar-link"Support>
+                <Link to="/Support" className="navbar-link">
                     Support
                 </Link>
             </NavItem>

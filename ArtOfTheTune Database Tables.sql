@@ -31,7 +31,7 @@ FOREIGN KEY (email) REFERENCES Account(email) ON UPDATE CASCADE);
 
 
 INSERT INTO Account(firstName,lastName,email,phone,password)
-VALUES ('Daniel', 'McCracken', '7ebed7@gmail.com', 0226188948, 'allmine'), ('Jordan', 'McCracken', 'something@gmail.com', 495673064, 'erkjthe');
+VALUES ('Daniel', 'McCracken', '7ebed7@gmail.com', 0226188948, 'allmine'), ('Jordan', 'McCracken', 'something@gmail.com', 495673064, 'password');
 
 
 INSERT INTO Song(Title,Length,Author,Genre)
