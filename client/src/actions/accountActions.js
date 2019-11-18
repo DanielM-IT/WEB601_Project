@@ -2,7 +2,6 @@ import {userConstants, accountConstants} from '../constants/accountConstants'
 import {accountService} from '../services/accountService'
 import {alertActions} from './'
 import {history} from '../helpers/history'
-import { func } from 'prop-types'
 
 export const userActions = {
     login,

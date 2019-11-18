@@ -1,10 +1,10 @@
 import {accountConstants} from '../constants/accountConstants'
 
 export function registration(state = {}, action) {
-    switch (action, type) {
+    switch (action.type) {
         case accountConstants.REGISTER_REQUEST:
             return {
-                registering = true
+                registering: true
             }
         case accountConstants.REGISTER_SUCCESS:
             return {}        
