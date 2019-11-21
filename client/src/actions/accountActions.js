@@ -10,11 +10,11 @@ export const accountActions = {
     getAccount
 }
 
-function login(username, password) {
+function login(email, password) {
     return dispatch => {
-        dispatch(request({username}))
+        dispatch(request({email}))
 
-        accountService.login(username, password)
+        accountService.login(email, password)
             .then(
                 account => {
                     dispatch(success(account))
@@ -53,15 +53,14 @@ function logout() {
     }
 }
 
-function register(account) {
+function register(fields) {
     return dispatch => {
-        dispatch(request(account))
+        dispatch(request(fields))
 
-        accountService.register(account)
+        accountService.register(fields)
             .then (
-                account => {
+                _fields => {
                     dispatch(success())
-                    history.push('/login')
                     dispatch(alertActions.success('Registration successful'))
                 },
                 error => {
@@ -71,9 +70,9 @@ function register(account) {
             )
     }
 
-    function request(account) {
+    function request(fields) {
         return {
-            type: accountConstants.REGISTER_REQUEST, account
+            type: accountConstants.REGISTER_REQUEST, fields
         }
     }
 
