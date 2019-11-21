@@ -1,13 +1,13 @@
-import {userConstants, accountConstants} from '../constants/accountConstants'
+import {accountConstants} from '../constants/accountConstants'
 import {accountService} from '../services/accountService'
-import {alertActions} from './'
+import {alertActions} from './alertActions'
 import {history} from '../helpers/history'
 
 export const userActions = {
     login,
     logout,
     register,
-    getAll
+    getAccount
 }
 
 function login(username, password) {
@@ -29,19 +29,19 @@ function login(username, password) {
 
     function request(account) { 
         return { 
-            type: userConstants.LOGIN_REQUEST, account
+            type: accountConstants.LOGIN_REQUEST, account
         }
     }
 
     function success(account) { 
         return { 
-            type: userConstants.LOGIN_SUCCESS, account
+            type: accountConstants.LOGIN_SUCCESS, account
         }
     }
 
     function failure(error) { 
         return { 
-            type: userConstants.LOGIN_FAILURE, error
+            type: accountConstants.LOGIN_FAILURE, error
         }
     }
 }
@@ -49,7 +49,7 @@ function login(username, password) {
 function logout() {
     accountService.logout()
     return {
-        type: userConstants.LOGOUT
+        type: accountConstants.LOGOUT
     }
 }
 
@@ -90,11 +90,11 @@ function register(account) {
     }
 }
 
-function getAll() {
+function getAccount() {
     return dispatch => {
         dispatch(request())
 
-        accountService.getAll()
+        accountService.getAccount()
             .then (
                 account => {
                     dispatch(success(account))
@@ -107,19 +107,19 @@ function getAll() {
 
     function request() {
         return {
-            type: accountConstants.GETALL_REQUEST
+            type: accountConstants.GETACCOUNT_REQUEST
         }
     }
 
     function success(account) {
         return {
-            type: accountConstants.GETALL_SUCCESS, account
+            type: accountConstants.GETACCOUNT_SUCCESS, account
         }
     }
 
     function failure(error) {
         return {
-            type: accountConstants.GETALL_FAILURE, error
+            type: accountConstants.GETACCOUNT_FAILURE, error
         }
     }
 }

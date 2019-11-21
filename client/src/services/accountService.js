@@ -4,7 +4,7 @@ export const accountService = {
     login,
     logout,
     register,
-    getAll,
+    getAccount,
     getById,
     update
 }
@@ -29,7 +29,7 @@ function logout() {
     localStorage.removeItem('user')
 }
 
-function getAll() {
+function getAccount() {
     const requestOptions = {
         method: 'GET',
         headers: authHeader()
@@ -42,8 +42,8 @@ function getById(id) {
         headers: authHeader()
     }
 
-    return fetch(`/users/${id}`, requestOptions).then
-    (handleResponse)
+    return fetch(`/users/${id}`, requestOptions)
+        .then(handleResponse)
 }
 
 function register(account) {
@@ -53,8 +53,8 @@ function register(account) {
         body: JSON.stringify(account)
     }
 
-    return fetch(`/users/register`, requestOptions).then
-    (handleResponse)
+    return fetch(`/users/register`, requestOptions)
+        .then(handleResponse)
 }
 
 function update(account) {
@@ -64,8 +64,8 @@ function update(account) {
         body: JSON.stringify(account)
     }
 
-    return fetch(`/users/${account.id}`, requestOptions).then
-    (handleResponse)
+    return fetch(`/users/${account.id}`, requestOptions)
+        .then(handleResponse)
 }
 
 function handleResponse(response) {
@@ -74,7 +74,7 @@ function handleResponse(response) {
         if (!response.ok) {
             if (response.status === 401) {
                 logout()
-                location.reload(true)
+                // location.reload(true)
             }
 
             const error = (data && data.message) ||
