@@ -9,7 +9,7 @@ import Default from './Components/pages/Default'
 import BrowseMusic from './Components/pages/BrowseMusic/BrowseMusic'
 import Footer from './Components/Footer'
 import {LoginPage} from './Components/pages/Login/LoginPage'
-import SignUp from './Components/pages/SignUp/SignUp'
+import {SignUpPage} from './Components/pages/SignUp/SignUp'
 import MyMusic from './Components/pages/MyMusic/MyMusic'
 import UploadMusic from './Components/pages/UploadMusic/UploadMusic'
 import EditAccount from './Components/pages/EditAccount/EditAccount'
@@ -29,7 +29,7 @@ const App = () => (
               <Route path="/BrowseMusic" component={BrowseMusic} />
               <Route path="/Support" component={Support} />
               <Route path="/Login" component={LoginPage} />
-              <Route path="/SignUp" component={SignUp} />
+              <Route path="/SignUp" component={SignUpPage} />
               <Route path="/MyAccount" component={MyAccount} />
               <Route path="/MyMusic" component={MyMusic} />
               <Route path="/UploadMusic" component={UploadMusic} />

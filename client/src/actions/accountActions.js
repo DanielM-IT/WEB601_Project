@@ -3,7 +3,7 @@ import {accountService} from '../services/accountService'
 import {alertActions} from './alertActions'
 import {history} from '../helpers/history'
 
-export const userActions = {
+export const accountActions = {
     login,
     logout,
     register,
