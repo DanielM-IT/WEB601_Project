@@ -1,7 +1,6 @@
 import {accountConstants} from '../constants/accountConstants'
 import {accountService} from '../services/accountService'
 import {alertActions} from './alertActions'
-import {history} from '../helpers/history'
 
 export const accountActions = {
     login,
@@ -18,7 +17,6 @@ function login(email, password) {
             .then(
                 account => {
                     dispatch(success(account))
-                    history.push('/')
                 },
                 error => {
                     dispatch(failure(error))
@@ -27,23 +25,9 @@ function login(email, password) {
             )
     }
 
-    function request(account) { 
-        return { 
-            type: accountConstants.LOGIN_REQUEST, account
-        }
-    }
-
-    function success(account) { 
-        return { 
-            type: accountConstants.LOGIN_SUCCESS, account
-        }
-    }
-
-    function failure(error) { 
-        return { 
-            type: accountConstants.LOGIN_FAILURE, error
-        }
-    }
+    function request(account) { return { type: accountConstants.LOGIN_REQUEST, account } }
+    function success(account) { return { type: accountConstants.LOGIN_SUCCESS, account } }
+    function failure(error) { return { type: accountConstants.LOGIN_FAILURE, error } }
 }
 
 function logout() {

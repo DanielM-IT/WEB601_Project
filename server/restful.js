@@ -50,6 +50,8 @@ router.get('/account/:email', routes.accounts.listSingleAccount)
 router.post('/account', jsonParser, routes.accounts.postAccount)
 // Route to PUT/update an existing account in the database.
 router.put('/account/:email', jsonParser, routes.accounts.updateAccount)
+// Route to POST login details.
+router.post('/account', jsonParser, routes.accounts.authenticateAccount)
 
 
 // Use express to route between the host and the route requested. Cors helps fix a possible issue with cross-origin sharing (site security) that can potentially cause errors.

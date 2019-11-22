@@ -22,7 +22,7 @@ function listSingleAccount(req, res) {
             } else {
                 return res.status(404).json(`Account with email ${email} does not exist`);
             }
-        })
+        }) 
         .catch(error => res.status(500).json(error))
 }
 
@@ -76,9 +76,30 @@ function updateAccount(req, res) {
         .catch(error => res.status(500).json(error))
 }
 
+function authenticateAccount(req, res) {
+    const { knex } = req.app.locals
+    const { email, password} = req.body
+    knex('account')
+        .where('email', email)
+        .where('password', password)
+        .fetch()
+        .then(account => {
+            if (account)
+            {
+
+            }
+            else 
+            {
+                return res.status(404).json({ errors: { form: 'Invalid credentials' }});
+            }
+        })
+
+}
+
 // Exports all the functions as a module object.
 module.exports = {
     listSingleAccount,
     postAccount,
-    updateAccount    
+    updateAccount,
+    authenticateAccount
 }

@@ -1,11 +1,10 @@
 import React from 'react'
 import PageTitle from '../../pageElements/PageTitle'
 import {Form, Button} from 'semantic-ui-react'
-import './Login.css'
-
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {accountActions} from '../../../actions/accountActions'
+import './Login.css'
 
 
 class LoginPage extends React.Component {
@@ -17,11 +16,12 @@ class LoginPage extends React.Component {
     this.state = {
         email: '',
         password: '',
+        errors: {},
         submitted: false
     }
 
-    this.handleChange = this.onChange.bind(this)
-    this.submitLoginForm = this.onSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.submitLoginForm = this.submitLoginForm.bind(this)
   }
 
 
@@ -37,12 +37,11 @@ class LoginPage extends React.Component {
     this.setState({ submitted: true })
     const {email, password} = this.state
     if (email && password) {
-        this.props.login(email, password)
+      this.props.login(email, password)
     }
-}
+  }
 
 
-  // Awaiting authentication to be added.
   render() {
     const { loggingIn } = this.props
     const { email, password, submitted } = this.state
@@ -54,7 +53,7 @@ class LoginPage extends React.Component {
           <br />
           <div>
             <div className='loginFormFields'>
-              <Form onSubmit={this.onSubmit}>
+              <Form onSubmit={this.submitLoginForm}>
                 <div className={'formGroup' + (submitted && !email ? 'hasError' : '')}>
                   <label>Email</label>
                   <input 
@@ -63,7 +62,8 @@ class LoginPage extends React.Component {
                     name="email"
                     placeholder="example@example.com.."
                     value={email}
-                    onChange={this.onChange}
+                    onChange={this.handleChange}
+                    field="email"
                     />
                     {submitted && !email &&
                       <div className="helpBlock">Email is required</div>}
@@ -76,7 +76,7 @@ class LoginPage extends React.Component {
                     name="password" 
                     placeholder="Password.."
                     value={password}
-                    onChange={this.onChange}
+                    onChange={this.handleChange}
                     />
                     {submitted && !password &&
                     <div className="helpBlock">Password is required</div>}

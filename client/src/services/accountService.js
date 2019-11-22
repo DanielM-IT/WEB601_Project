@@ -1,5 +1,3 @@
-import {authHeader} from '../helpers/authHeader'
-
 export const accountService = {
     login,
     logout,
@@ -7,57 +5,6 @@ export const accountService = {
     getAccount,
     getById,
     update
-}
-
-function login(email, password) {
-    const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({email, password})
-    }
-
-    return fetch(`http://localhost:4200/api/account/`, requestOptions)
-        .then(handleResponse)
-        .then(account => {
-            localStorage.setItem('account', JSON.stringify(account))
-
-            return account
-        })
-}
-
-function logout() {
-    localStorage.removeItem('account')
-}
-
-function getAccount(email) {
-    const requestOptions = {
-        method: 'get',
-        headers: authHeader()
-    }
-
-    return fetch('http://localhost:4200/api/account/' + email, requestOptions)
-        .then(handleResponse);
-}
-
-function getById(email) {
-    const requestOptions = {
-        method: 'GET',
-        headers: authHeader()
-    }
-
-    return fetch(`http://localhost:4200/api/account/${email}`, requestOptions)
-        .then(handleResponse)
-}
-
-function register(fields) {
-    const requestOptions = {
-        method: 'post',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(fields)
-    }
-
-    return fetch('http://localhost:4200/api/account', requestOptions)
-        .then(handleResponse)
 }
             // The request type and controller is then fetched through the following url. The request method is specified
             // along with the content type specified as being converted to json format before being posted into 
@@ -85,18 +32,67 @@ function register(fields) {
 //         "password": this.password.value,
 //     })
 // })
+function login(email, password) {
+    const requestOptions = {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({ email, password })
+    }
 
+    return fetch(`http://localhost:4200/api/account/`, requestOptions)
+        .then(handleResponse)
+        .then(account => {
+            localStorage.setItem('account', JSON.stringify(account))
+
+            return account
+        })
+}
+
+function logout() {
+    localStorage.removeItem('account')
+}
+
+function getAccount(email) {
+    const requestOptions = {
+        method: 'get',
+    }
+
+    return fetch('http://localhost:4200/api/account/' + email, requestOptions)
+        .then(handleResponse);
+}
+
+function register(fields) {
+    const requestOptions = {
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(fields)
+    }
+
+    return fetch('http://localhost:4200/api/account', requestOptions)
+        .then(handleResponse)
+}
 
 function update(account) {
     const requestOptions = {
         method: 'put',
-        headers: {...authHeader(), 'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(account)
     }
 
     return fetch(`http://localhost:4200/api/account/${account.email}`, requestOptions)
         .then(handleResponse)
 }
+
+function getById(email) {
+    const requestOptions = {
+        method: 'GET',
+    }
+
+    return fetch(`http://localhost:4200/api/account/${email}`, requestOptions)
+        .then(handleResponse)
+}
+
+
 
 function handleResponse(response) {
     return response.text().then(text => {
