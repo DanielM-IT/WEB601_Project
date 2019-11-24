@@ -1,7 +1,8 @@
 import React from 'react'
 import PageTitle from '../../pageElements/PageTitle'
-import { BtnContainer } from '../../pageElements/Buttons';
+import { BtnContainer } from '../../pageElements/Buttons'
 import './UploadMusic.css'
+import MyUploader from '../../pageElements/DragAndDrop'
 
 
 export default class UploadMusic extends React.Component {
@@ -164,12 +165,10 @@ export default class UploadMusic extends React.Component {
                             <div className='errorMessage'>{this.state.errors.Genre}</div>
                         </div>
                         <br />
-                        <br />
-
+                        <div className="dragAndDrop">
+                            <MyUploader />
+                        </div>
                         <div className="uploadButtons">
-                            <BtnContainer>
-                                Browse PC
-                            </BtnContainer>
                             <BtnContainer>
                                 Upload Music                            
                             </BtnContainer>

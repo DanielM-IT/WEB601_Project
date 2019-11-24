@@ -1,4 +1,5 @@
 import React from 'react'
+import AudioPlayer from "react-h5-audio-player"
 import './BrowseSongsCard.css'
 
 
@@ -10,14 +11,18 @@ export default class Song extends React.Component {
             // Following this each value from the selected record is placed into a header to be displayed.
             <div className="songGrid">
                 {this.props.songs.map((Song) => (
-               <div className="song" key={Song.SongId}>
-                    <h3>{Song.Title}</h3>  
-                    <input className="slider" type="range" />
-                    <div className='songLength'>
-                        <pre><p>{Song.Length}</p></pre>
+               <div className="singleSong" key={Song.SongId}>
+                   <div className="titleContainer">
+                        <h3>{Song.Title}</h3>
                     </div>
+                        <AudioPlayer
+                            src={Song.AudioFile}
+                            onPlay={e => console.log("onPlay")}
+                        />
                     <div className='details'>
-                        <pre><p><strong>{Song.Author}    •   {Song.Genre}</strong></p></pre>
+                        <strong><pre>Author:   {Song.Author}
+                        <br/>
+                        Genre:   {Song.Genre}</pre></strong>
                     </div>
                </div>
             ))}

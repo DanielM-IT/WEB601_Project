@@ -1,4 +1,5 @@
 import React from 'react'
+import AudioPlayer from "react-h5-audio-player"
 import './PromotionsCard.css'
 
 
@@ -10,16 +11,20 @@ export default class Promotion extends React.Component {
             // Following this each value from the selected record is placed into a header to be displayed.
             <div className="promotionGrid">
                 {this.props.songs.map((Promotion) => (
-               <div className="song" key={Promotion.SongId}>
-                    <h2>{Promotion.Title}</h2>  
-                    <div className='promotionSongLength'>
-                        <img src='../../icons/musical-notes-symbols.png' alt="musicIcon" className="songIcon"/>  
-                        <input className="promotionSongSlider" type="range" />
-                        <pre><p>{Promotion.Length}</p></pre>
-                    </div>
+               <div className="promotionSong" key={Promotion.SongId}>
+                    <div className="titleContainer">
+                        <h2>{Promotion.Title}</h2> 
+                    </div> 
+                    <AudioPlayer
+                            src={Promotion.AudioFile}
+                            onPlay={e => console.log("onPlay")}
+                        />
                     <div className='promotionSongDetails'>
-                        <pre><p><strong>{Promotion.Author}    •   {Promotion.Genre}</strong></p></pre>
+                    <strong><pre>Author:   {Promotion.Author}
+                        <br/>
+                        Genre:   {Promotion.Genre}</pre></strong>
                     </div>
+                    <audio /> 
                </div> 
             ))}
             </div>

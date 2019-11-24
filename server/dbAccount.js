@@ -83,8 +83,8 @@ function authenticateAccount(req, res) {
         .where('email', email)
         .where('password', password)
         .fetch()
-        .then(account => {
-            if (account)
+        .then(response => {
+            if (response)
             {
 
             }

@@ -8,12 +8,11 @@
 }
   
 .uploadSong {
-  border: solid 1px var(--mainYellow);
   width: 70%;
   margin-top: 3%;
   margin-left: 15%;
   margin-right: 15%;
-  padding: 9% 9% 6% 8%;
+  padding: 2% 9% 6% 8%;
   border-radius: 30px;
 }
 
@@ -30,18 +29,22 @@
 
 .rightCenterColumn {
   float: left;
-  width: 12%;
-  margin-left: 12%;
+  width: 8%;
+  margin-left: 7%;
 }
 
 .rightUploadColumn {
   float: right;
   width: 28%;
 }
+
+.dragAndDrop {
+  margin-top: 25%;
+}
  
 .uploadButtons {
   text-align: center;
-  margin-top: 30%;
+  margin-top: 3%;
 }
 
 .styleButtons {

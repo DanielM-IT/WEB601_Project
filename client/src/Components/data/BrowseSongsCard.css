@@ -3,12 +3,17 @@
     flex-wrap: wrap;
 }
 
-.song {
+.titleContainer {
+  height: 65px;
+}
+
+.singleSong {
     border-radius: 5px;
     padding: 20px;
-    margin: 4%;
+    margin-top: 1%;
+    margin-left: 4%;
+    margin-right: 4%;
     width: 23%;
-    background-color: rgb(185, 185, 185);
     text-align: center;
   }
 
@@ -16,16 +21,4 @@
   font-size: small;;
   }
 
-  .details {
-    float: left;
-  }
 
-  .songLength {
-    float: right;
-  }
-
-  .slider {
-    float: left;
-    width: 70%;
-    margin-top: 5%;
-  }

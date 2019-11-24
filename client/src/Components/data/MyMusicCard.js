@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import AudioPlayer from "react-h5-audio-player"
 import './MyMusicCard.css'
 
 
@@ -35,14 +36,18 @@ export default class MySongs extends React.Component {
             // is bound to the SongId to all the correct song card to be deleted on click.  
             <div className="songGrid">
             {this.props.songs.map((Song) => (
-               <div className="song" key={Song.SongId}>
-                    <h3>{Song.Title}</h3>  
-                    <input className="slider" type="range" />
-                    <div className='songLength'>
-                        <pre><p>{Song.Length}</p></pre> 
+               <div className="mySong" key={Song.SongId}>
+                   <div className="titleContainer">
+                    <h3>{Song.Title}</h3>
                     </div>
+                        <AudioPlayer
+                            src={Song.AudioFile}
+                            onPlay={e => console.log("onPlay")}
+                        />
                     <div className='details'>
-                        <pre><p><strong>{Song.Author}    •   {Song.Genre}</strong></p></pre>
+                        <strong><pre>Author:   {Song.Author}
+                        <br/>
+                        Genre:   {Song.Genre}</pre></strong>
                     </div>
                     <Link songs={Song.SongId} to='/EditMusic'>
                         <input type="submit" className="editBtn" value="Edit Song" /> 

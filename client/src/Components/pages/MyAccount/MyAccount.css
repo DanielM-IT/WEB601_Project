@@ -44,4 +44,8 @@
     font-weight: bold;
     cursor: pointer;
   }
+
+  .linkText {
+    color: white !important;
+  }
  

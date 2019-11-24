@@ -52,15 +52,9 @@ export default class BrowseMusic extends React.Component {
                     <h3>Categories</h3>
                     <ul>
                         <br/>
-                        <li>Popular Music</li>
-                        <br />
-                        <li>Blues</li>
-                        <br />
                         <li>Classical</li>
                         <br />
-                        <li>Country</li>
-                        <br />
-                        <li>Heavy Metal</li>
+                        <li>Film Scores</li>
                         <br />
                         <li>Hip Hop</li>
                         <br />
@@ -68,13 +62,15 @@ export default class BrowseMusic extends React.Component {
                         <br />
                         <li>Pop</li>
                         <br />
-                        <li>Reggae</li>
-                        <br />
                         <li>Rock</li>
+                        <br />
+                        <li>Electronic</li>
                     </ul>
                 </div>
                 <div className='contentColumn'>
                     <PageTitle name="Browse" title="Music" />
+                    <br/>
+                    <br/>
                     <BrowseSongsCard songs={this.state.songs}/>              
                 </div>
             </div>

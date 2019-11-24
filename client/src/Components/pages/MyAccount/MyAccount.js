@@ -51,15 +51,32 @@ export default class MyAccount extends React.Component {
         return(
             <div className="myAccountWrapper">
                 <div className="pagesListColumn">
-                    <h3>Account Pages</h3>
+                    <h1>Account Pages</h1>
                     <ul>
-                        <li>My Account</li>
-                        <br />
-                        <li>Upload Music</li>
-                        <br />
-                        <li>My Music</li>
-                        <br />
-                        <li>Log Out</li>
+                        <br/>
+                        <li>
+                            <Link className="linkText" to='/MyAccount'>
+                                <h4>My Account</h4>
+                            </Link>
+                        </li>
+                        <br/>
+                        <li>
+                            <Link className="linkText" to='/UploadMusic'>
+                            <h4>Upload Music</h4>
+                            </Link>
+                        </li>
+                        <br/>
+                        <li>
+                            <Link className="linkText" to='/MyMusic'>
+                            <h4>My Music</h4>
+                            </Link>
+                        </li>
+                        <br/>
+                        <li>
+                            <Link className="linkText" to='/'>
+                            <h4>Log Out</h4>
+                            </Link>
+                        </li>
                     </ul>
                 </div>
                 <div className="accountContentColumn">

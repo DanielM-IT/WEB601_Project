@@ -1,6 +1,7 @@
 import React from 'react'
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import {Link} from 'react-router-dom'
+import { SocialIcon } from 'react-social-icons'
 import './Footer.css'
 
 const Footer = () => {
@@ -8,46 +9,38 @@ const Footer = () => {
       <MDBFooter color="blue" className="font-small pt-4 mt-4">
         <MDBContainer fluid className="text-center text-md-left">
           <MDBRow className="leftFooterColumn">
-            <MDBCol md="5">
-              <h5 className="creditLink">Footer Content</h5>
-              <p className="creditLink">
-                Here you can use rows and columns here to organize your footer
-                content.
-              </p>
+            <MDBCol md="4">
             </MDBCol>
             <MDBCol md="3">
-              <h5 className="creditLink">Links</h5>
-              <ul>
-                <li className="list-item">
-                  <a href="#!">Link 1</a>
-                </li>
-                <li className="list-item">
-                  <a href="#!">Link 2</a>
-                </li>
-                <li className="list-item">
-                  <a href="#!">Link 3</a>
-                </li>
-                <li className="list-item">
-                  <a href="#!">Link 4</a>
-                </li>
-              </ul>
+              <h5 className="creditLink">Connect With Us</h5>
+              <MDBRow>
+              <MDBCol md="3">
+              <pre><SocialIcon network="spotify" /><p className="list-item">Spotify</p></pre>
+              </MDBCol>
+              <MDBCol md="3">
+              <SocialIcon network="youtube" /><p className="list-item">YouTube</p> 
+              </MDBCol>
+              <MDBCol md="3">
+              <SocialIcon network="soundcloud" /><p className="list-item">Soundcloud</p>
+              </MDBCol>
+              <MDBCol md="3">
+              <SocialIcon network="facebook" /><p className="list-item">Facebook</p>
+              </MDBCol>
+              </MDBRow>
             </MDBCol>
-            <MDBCol md="4">
+            <MDBCol md="5">
               <h5 className="creditLink">Links</h5>
-              <ul>
-                <li className="list-item">
-                  <a href="#!">Link 1</a>
-                </li>
-                <li className="list-item">
-                  <a href="#!">Link 2</a>
-                </li>
-                <li className="list-item">
-                  <a href="#!">Link 3</a>
-                </li>
-                <li className="list-item">
-                  <a href="#!">Link 4</a>
-                </li>
-              </ul>
+              <Link to="/" className="list-item">
+                    Support
+                </Link>
+                <br/>
+              <Link to="/Browse" className="list-item">
+                BrowseMusic
+                </Link>
+                <br/>
+                <Link to="/Support" className="list-item">
+                    Support
+                </Link>
             </MDBCol>
           </MDBRow>
         </MDBContainer>
@@ -63,18 +56,3 @@ const Footer = () => {
   export default Footer;
 
 
-// export default class Footer extends React.Component {
-//     render() {
-//         return(
-            
-//             <div className="footerContainer">
-//                 <div className="creditLink">Icons made by 
-//                     <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from 
-//                     <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com </a> is licensed by 
-//                     <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY
-//                     </a>
-//                 </div>
-//             </div>
-//         )
-//     }
-// }

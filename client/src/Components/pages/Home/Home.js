@@ -2,7 +2,9 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import { BtnContainer } from '../../pageElements/Buttons';
 import './Home.css'
+import PageTitle from '../../pageElements/PageTitle'
 import PromotionsCard from '../../data/PromotionsCard'
+import {Container, Row, Col} from 'reactstrap'
 
 
 export default class Home extends React.Component {
@@ -49,8 +51,8 @@ export default class Home extends React.Component {
     // the six retrieved records.
     render() {
         return( 
-            <div className="landingPageWrapper">
-                <div className="featureContainer">
+            <Container className="landingPageWrapper">
+                <Row className="featureContainer">
                     <img src='../../images/black_business_technology.jpg' alt="featureMic" className="featureImage" /> 
                     <div className="text">
                         <h2>Upload your songs for free today and show the <br/> music community what you can do!</h2>
@@ -62,28 +64,16 @@ export default class Home extends React.Component {
                             </BtnContainer>
                         </Link>
                     </div>
-                </div>
-                <div className="homeBody">
-                    <div className="search-container">
-                        <form>
-                            <div className="search-bar">
-                                <input type="text" placeholder="Search" aria-label="Search" />
-                            </div>
-                            {/* <div className="callToAction">
-                                <Link to="/UploadMusic">
-                                    <BtnContainer>
-                                        Upload Music
-                                    </BtnContainer>
-                                </Link>
-                            </div>                */}
-                        </form>      
+                </Row>
+                <Row className="homeBody">
+                    <div className="promotionsTitle">
+                        <PageTitle name="Latest Music" />
                     </div>
                     <div className="promotions">
-                        <h1>Latest Music</h1>
                         <PromotionsCard songs={this.state.songs}/>
                     </div>
-                </div>
-            </div>
+                </Row>
+            </Container>
         )
     }
 }

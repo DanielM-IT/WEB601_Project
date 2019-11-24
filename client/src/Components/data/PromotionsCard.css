@@ -1,6 +1,7 @@
 .promotionGrid {
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .songIcon {
@@ -9,25 +10,22 @@
     float: left;
 }
 
-.song {
-    border-radius: 5px;
-    margin: 4%;
-    width: 23%;
-    background-color: rgb(185, 185, 185);
-    text-align: center;
-  }
+.promotionSong .titleContainer {
+  height: 120px;
+}
+
+.promotionSong{
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 1%;
+  margin-left: 4%;
+  margin-right: 4%;
+  width: 23%;
+  text-align: center;
+}
   
-  .promotionSongLength {
-    width: 100%;
-  }
-
   .promotionSongDetails {
-    float: left;
     margin-left:5%;
-  }
-
-  .promotionSongSlider {
-    float: left;
-    width: 55%;
-    margin: 1% 5%;
+    text-align: left;
+    margin-top: 4%;
   }

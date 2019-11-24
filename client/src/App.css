@@ -26,7 +26,6 @@ body{
 
 /* Footer styling */
 .footer {
-  height: auto;
   background-color: #232528;
   clear: both;
 }
@@ -40,5 +39,4 @@ body{
   max-width: 1920px !important;
   padding: 0;
  }
-
 

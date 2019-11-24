@@ -157,9 +157,6 @@ class SignUp extends React.Component {
                                 placeholder="Your first name.." 
                                 value={fields.firstName} 
                                 onChange={this.handleChange} />   
-                                {submitted && !fields.firstName && 
-                                    <div className="helpBlock">First name is required</div>
-                                }
                         </div>
                         <div className='errorMessage'>{this.state.errors.firstName}</div>
                         
@@ -172,9 +169,6 @@ class SignUp extends React.Component {
                                 placeholder="Your last name.." 
                                 value={fields.lastName} 
                                 onChange={this.handleChange} />   
-                                {submitted && !fields.lastName && 
-                                    <div className="helpBlock">Last name is required</div>
-                                }
                         </div>
                         <div className='errorMessage'>{this.state.errors.lastName}</div>
                         
@@ -187,9 +181,6 @@ class SignUp extends React.Component {
                                 placeholder="Your email.." 
                                 value={fields.email} 
                                 onChange={this.handleChange} />   
-                                {submitted && !fields.email && 
-                                    <div className="helpBlock">Email is required</div>
-                                }
                         </div>
                         <div className='errorMessage'>{this.state.errors.email}</div>
                         
@@ -202,9 +193,6 @@ class SignUp extends React.Component {
                                 placeholder="Your phone number.." 
                                 value={fields.phone} 
                                 onChange={this.handleChange} />   
-                                {submitted && !fields.phone && 
-                                    <div className="helpBlock">Phone number is required</div>
-                                }
                         </div>
                         <div className='errorMessage'>{this.state.errors.phone}</div>
                        
@@ -217,14 +205,11 @@ class SignUp extends React.Component {
                                 placeholder="Choose a password.." 
                                 value={fields.password} 
                                 onChange={this.handleChange} />   
-                                {submitted && !fields.password && 
-                                    <div className="helpBlock">Password is required</div>
-                                }
                         </div>
                         <div className='errorMessage'>{this.state.errors.password}</div>
                         <br />
                         <div className='formGroup'>
-                            <Button className="button">Sign Up</Button> 
+                            <Button primary className="button">Sign Up</Button> 
                             {registering && 
                             <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
                             }

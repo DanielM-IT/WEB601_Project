@@ -1,14 +1,20 @@
+.titleContainer {
+  height: 65px;
+}
+
 .songGrid {
     display: flex;
     flex-wrap: wrap;
 }
 
-.song {
+.mySong {
     border-radius: 5px;
     padding: 20px;
-    margin: 4%;
+    margin-top: 1%;
+    margin-left: 4%;
+    margin-right: 4%;
     width: 23%;
-    background-color: rgb(185, 185, 185);
+    text-align: center;
   }
 
   .details {

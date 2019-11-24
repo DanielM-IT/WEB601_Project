@@ -7,7 +7,7 @@ function listAllSongs(req, res) {
     const { knex } = req.app.locals
     // DB Query that selects all values from a table.
     knex
-        .select('SongId','Title', 'Author', 'Length', 'Genre')
+        .select('SongId','Title', 'Author', 'AudioFile', 'Genre')
         .from('song')
        
         .then(data => res.status(200).json(data))
@@ -20,7 +20,7 @@ function listPromotionalSongs(req, res) {
     const { knex } = req.app.locals
     // DB Query that selects values based on a condition.
     knex
-        .select('SongId','Title', 'Author', 'Length', 'Genre')
+        .select('SongId','Title', 'Author', 'AudioFile', 'Genre')
         .from('song')
         .orderBy('SongId', 'desc')
         .limit(6)
@@ -39,7 +39,7 @@ function listSingleSong(req, res) {
     const { SongId } = req.params
     // DB Query that selects values based on a condition.
     knex
-        .select('SongId','Title', 'Author', 'Length', 'Genre')
+        .select('SongId','Title', 'Author', 'AudioFile', 'Genre')
         .from('song')
         .where({
             SongId: `${SongId}`
@@ -63,7 +63,7 @@ function postSong(req, res) {
     // Takes the data from the body of the request and places it in a variable.
     const payload = req.body
     // Variable to store information on which values are mandatory when posting.
-    const mandatoryColumns = ['Title' , 'Length', 'Author', 'Genre']
+    const mandatoryColumns = ['Title' , 'AudioFile', 'Author', 'Genre']
     // Parsing payload which is the parameters sent from the client as part of the POST request.
     const payloadKeys = Object.keys(payload)
     const mandatoryColumnsExists = mandatoryColumns.every(mc => payloadKeys.includes(mc))

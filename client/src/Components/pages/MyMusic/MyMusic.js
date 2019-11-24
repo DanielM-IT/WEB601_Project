@@ -71,6 +71,8 @@ export default class MyMusic extends React.Component {
                 </div>
                 <div className='contentColumn'>
                     <PageTitle name="My" title="Music" />
+                    <br/>
+                    <br/>
                     <MyMusicCard songs={this.state.songs}/>              
                 </div>
             </div>

@@ -28,7 +28,9 @@ const MenuBar = () => {
             <img src='../../icons/musical-notes-symbols.png' alt="musicSite" className="navbar-logo"/>
         </NavbarBrand>
         <NavItem>
-            <h1 className="navbarBrand"><strong>Tunique</strong></h1>
+            <Link to="/" className="navbar-title">
+                <h1 className="navbarBrand"><strong>Tunique</strong></h1>
+            </Link>
         </NavItem>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

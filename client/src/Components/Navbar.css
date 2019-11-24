@@ -11,6 +11,7 @@
     
   .navbarBrand {
     color: black;
+    margin-top: 30%;
   }
 
   .dropdownBackground {
@@ -33,8 +34,16 @@
     font-size: 1.3rem;
   }
 
+  .navbar-title{
+    color: black  !important;
+  }
+
   .navbar-link :hover {
     color: #aaa9ad !important; 
+  }
+
+  .navbar-title :hover {
+    color: black !important; 
   }
 
   .navbar-dropdown {

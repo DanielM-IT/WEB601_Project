@@ -32,42 +32,24 @@
     height: auto;
    }
   
-  .search-container {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .search-container .search-bar {
-    position: absolute;
-    top: 10%;
-    left: 0;
-    right: 0;
-    margin: 4% auto;
-    text-align: center;;
-    width: 200px;
-  }
-
-  .search-container .callToAction {
-    position: absolute;
-    top: 0%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    text-align: center;;
-  }
-
   .landingPageWrapper h1 {
      text-align: center;
   }
 
    .homeBody {
     min-height: 70vh;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .promotionsTitle {
+   margin-top: 3%;
+   padding: 1%;
   }
     
    .promotions {
-    margin-top: 10%;
-    padding: 3%;
+    padding: 1% 5%;
     min-height: 70vh;
    }
   
