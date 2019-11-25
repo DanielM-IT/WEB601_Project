@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import PageTitle from '../../pageElements/PageTitle'
 import {Form, Button} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
@@ -22,6 +22,9 @@ export default class LoginPage extends React.Component {
     this.submitLoginForm = this.submitLoginForm.bind(this)
   }
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
 
   handleChange(e) {
     const {name, value} = e.target
@@ -44,17 +47,9 @@ export default class LoginPage extends React.Component {
     const { loggingIn } = this.props
     const { email, password, submitted } = this.state
 
-    const [name,setName] = useState("")
+    const responseGoogle = (response) => {
+      console.log(response)
 
-    const [email,setEmail] = useState("")
-
-    const [url,setUrl] = useState("")
-
-
-    const responseGoogle = response => {
-      setName(response.profileObj.name)
-      setEmail(response.profileObj.email)
-      setUrl(response.profileObj.imageUrl)
 
     }
 
@@ -97,7 +92,8 @@ export default class LoginPage extends React.Component {
                 <GoogleLogin
                   clientId="628926382103-esupl3pfh09ulilccp614q32t6unsbi2.apps.googleusercontent.com"
                   buttonText="Login"
-                  onSuccess={responseGoogle}
+                  onSuccess={      
+                    <Link to="/" className="dropdown-link"></Link>}
                   onFailure={responseGoogle}
                   cookiePolicy={'single_host_origin'}
                 />

@@ -2,8 +2,7 @@ export const accountService = {
     register
 }
 
-
-
+// The below functions handle the requests made by my redux components to the backend for data and produce a response accordingly.
 function register(fields) {
     const requestOptions = {
         method: 'post',

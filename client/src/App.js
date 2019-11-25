@@ -21,6 +21,8 @@ import EditMusic from './Components/pages/EditMusic/EditMusic'
 // This is a variable not a class here. The reason being that there is no need to use lifecycle hooks or set the state here.
 class App extends React.Component {
 
+  // I have set an initial state of userID to null. I can check logged in state based on this. If it is null then the user is logged out and I can
+  // show the correct navbar. If there is an ID then a user is logged in and I have to show the logged in navbar.
   constructor() {
     super();
     this.state = {
@@ -43,7 +45,7 @@ class App extends React.Component {
               <Route exact path="/" component={Home} />
               <Route path="/BrowseMusic" component={BrowseMusic} />
               <Route path="/Support" component={Support} />
-              <Route path="/Login" component={LoginPage} />
+              <Route path="/Login" userID={this.state.userID} component={LoginPage} />
               <Route path="/SignUp" component={SignUpPage} />
               <Route path="/MyAccount" component={MyAccount} />
               <Route path="/MyMusic" component={MyMusic} />

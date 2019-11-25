@@ -1,5 +1,6 @@
 import {alertConstants} from '../constants/alertConstants'
 
+// These are my alert reducers which receive a state, perform an action on it and return the new state.
 export function alert(state = {}, action) {
     switch (action.type) {
         case alertConstants.SUCCESS:

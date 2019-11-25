@@ -18,6 +18,10 @@ export default class MyAccount extends React.Component {
         this.submitAccountForm = this.submitAccountForm.bind(this)
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     // Method to update the properties state upon any change made by the user to a UI property.
     handleChange(e) {
         let fields = this.state.fields

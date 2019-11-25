@@ -31,10 +31,10 @@ const Footer = () => {
             <MDBCol md="5">
               <h5 className="creditLink">Links</h5>
               <Link to="/" className="list-item">
-                    Support
+                    Home
                 </Link>
                 <br/>
-              <Link to="/Browse" className="list-item">
+              <Link to="/BrowseMusic" className="list-item">
                 BrowseMusic
                 </Link>
                 <br/>

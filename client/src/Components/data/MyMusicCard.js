@@ -34,6 +34,8 @@ export default class MySongs extends React.Component {
             // Following this each value from the selected record is placed into a header to be displayed.
             // Last of all there are two buttons. The first links to an edit page to edit records. The second
             // is bound to the SongId to all the correct song card to be deleted on click.  
+            // Inside a pair of divs is an audio player component. This takes a link to an audio file from my 
+            // database and will render it within a small audio player on the application page.
             <div className="songGrid">
             {this.props.songs.map((Song) => (
                <div className="mySong" key={Song.SongId}>

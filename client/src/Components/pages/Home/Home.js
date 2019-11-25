@@ -21,7 +21,9 @@ export default class Home extends React.Component {
     // Mount a new component which calles the getSongs() method.)
     componentDidMount() {
         this.getPromotionalSongs()
+        window.scrollTo(0, 0)
     }
+    
 
     // Method that fetches all the song records from the database and places them into the songs array.
     // It also respondse with respon in json form.

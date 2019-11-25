@@ -19,6 +19,10 @@ export default class UploadMusic extends React.Component {
         this.submitUploadMusicForm = this.submitUploadMusicForm.bind(this)
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     // Method to update the properties state upon any change made by the user to a UI property.
     handleChange(e) {
         let fields = this.state.fields

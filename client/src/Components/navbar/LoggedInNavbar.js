@@ -15,7 +15,8 @@ import {
   from 'reactstrap';
  import './Navbar.css'
 
-
+ 
+// Navbar imports and uses react bootstrap components.
 const MenuBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 

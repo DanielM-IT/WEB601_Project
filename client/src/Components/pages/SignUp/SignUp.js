@@ -29,6 +29,10 @@ class SignUp extends React.Component {
         this.submitSignUpForm = this.submitSignUpForm.bind(this)
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     // Method to update the properties state upon any change made by the user to a UI property.
     handleChange(e) {
         const {name, value} = e.target
@@ -108,13 +112,6 @@ class SignUp extends React.Component {
             formIsValid = false
             errors["phone"] = "*Please enter your phone number."
         }
-
-        // if (typeof fields["phone"] !== "undefined") {
-        //     if (!fields["phone"].match(/^[0-9]{10}$/)) {
-        //         formIsValid = false
-        //         errors["phone"] = "*Please enter a valid phone number."
-        //     }
-        // }
 
         if (!fields["password"]) {
             formIsValid = false
@@ -227,9 +224,11 @@ function mapState(state) {
     return {registering}
 }
 
+// Gets the action that will be performed on the state.
 const actionCreators = {
     register: accountActions.register
 }
 
+// Connect is used to connect the component with the store and action creators. The export is no longer deault since it has been changed and given an alias.
 const connectedSignUpPage = connect(mapState, actionCreators)(SignUp)
 export { connectedSignUpPage as SignUpPage }

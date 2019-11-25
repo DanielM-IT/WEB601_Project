@@ -18,6 +18,7 @@ export default class EditMusic extends React.Component {
     // Mount a new component which calles the getSongs() method.)
     componentDidMount() {
         this.getSong()
+        window.scrollTo(0, 0)
     }
 
     // Method that fetches a single song from the database using the specified ID and places it into the songs array.

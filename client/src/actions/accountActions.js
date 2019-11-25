@@ -2,13 +2,15 @@ import {accountConstants} from '../constants/accountConstants'
 import {accountService} from '../services/accountService'
 import {alertActions} from './alertActions'
 
+// Exports my declared functions
 export const accountActions = {
     login,
     logout,
     register,
-    getAccount
 }
 
+// The below functions are using Thunk to call them from within each other. The parent function is the dispatcher which dispatches the
+// new state to the store. The child functions are the actions which are used to change the state.
 function login(email, password) {
     return dispatch => {
         dispatch(request({email}))
@@ -54,55 +56,8 @@ function register(fields) {
             )
     }
 
-    function request(fields) {
-        return {
-            type: accountConstants.REGISTER_REQUEST, fields
-        }
-    }
-
-    function success(account) {
-        return {
-            type: accountConstants.REGISTER_SUCCESS, account
-        }
-    }
-
-    function failure(error) {
-        return {
-            type: accountConstants.REGISTER_FAILURE, error
-        }
-    }
+    function request(fields) { return { type: accountConstants.REGISTER_REQUEST, fields } }
+    function success(account) { return { type: accountConstants.REGISTER_SUCCESS, account } }
+    function failure(error) { return { type: accountConstants.REGISTER_FAILURE, error } }
 }
 
-function getAccount() {
-    return dispatch => {
-        dispatch(request())
-
-        accountService.getAccount()
-            .then (
-                account => {
-                    dispatch(success(account))
-                },
-                error => {
-                    dispatch(failure(error))
-                }
-            )
-    }
-
-    function request() {
-        return {
-            type: accountConstants.GETACCOUNT_REQUEST
-        }
-    }
-
-    function success(account) {
-        return {
-            type: accountConstants.GETACCOUNT_SUCCESS, account
-        }
-    }
-
-    function failure(error) {
-        return {
-            type: accountConstants.GETACCOUNT_FAILURE, error
-        }
-    }
-}

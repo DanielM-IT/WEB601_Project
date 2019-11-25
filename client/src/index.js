@@ -9,6 +9,8 @@ import {store} from './helpers/store'
 
 
 // This ReactDOM renders the application in the root(index.html) file.
+// The provider makes the  store available to any component that is nested inside of it. In this case any component can
+// access it since my entire application is nested within it.
 ReactDOM.render(
     <Router>
         <Provider store={store}>

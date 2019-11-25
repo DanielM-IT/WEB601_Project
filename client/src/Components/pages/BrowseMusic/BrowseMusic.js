@@ -18,6 +18,7 @@ export default class BrowseMusic extends React.Component {
     // Mount a new component which calles the getSongs() method.)
     componentDidMount() {
         this.getSongs()
+        window.scrollTo(0, 0)
     }
 
     // Method that fetches all the song records from the database and places them into the songs array.

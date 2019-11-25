@@ -19,6 +19,7 @@ export default class MyAccount extends React.Component {
     // Mount a new component which calles the getSongs() method.)
     componentDidMount() {
         this.getAccount()
+        window.scrollTo(0, 0)
     }
 
     // Method that fetches a single account records from the database and places them into the accounts array.

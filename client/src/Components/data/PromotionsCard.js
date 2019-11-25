@@ -9,6 +9,8 @@ export default class Promotion extends React.Component {
         return(
             // Maps each song from the song array to a specific record. This then takes the SongId as its key.
             // Following this each value from the selected record is placed into a header to be displayed.
+            // Inside a pair of divs is an audio player component. This takes a link to an audio file from my 
+            // database and will render it within a small audio player on the application page.
             <div className="promotionGrid">
                 {this.props.songs.map((Promotion) => (
                <div className="promotionSong" key={Promotion.SongId}>
