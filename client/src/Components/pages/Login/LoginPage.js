@@ -92,8 +92,7 @@ export default class LoginPage extends React.Component {
                 <GoogleLogin
                   clientId="628926382103-esupl3pfh09ulilccp614q32t6unsbi2.apps.googleusercontent.com"
                   buttonText="Login"
-                  onSuccess={      
-                    <Link to="/" className="dropdown-link"></Link>}
+                  onSuccess={responseGoogle}
                   onFailure={responseGoogle}
                   cookiePolicy={'single_host_origin'}
                 />
