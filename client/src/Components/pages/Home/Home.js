@@ -4,7 +4,7 @@ import { BtnContainer } from '../../pageElements/Buttons';
 import './Home.css'
 import PageTitle from '../../pageElements/PageTitle'
 import PromotionsCard from '../../data/PromotionsCard'
-import {Container, Row, Col} from 'reactstrap'
+import {Container, Row} from 'reactstrap'
 
 
 export default class Home extends React.Component {

@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 import React, { useState } from 'react';
-import {BtnContainer} from './pageElements/Buttons'
+import {BtnContainer} from '../pageElements/Buttons'
 import {
   Collapse,
   Navbar,

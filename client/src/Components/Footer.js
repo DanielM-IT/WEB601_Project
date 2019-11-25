@@ -9,9 +9,9 @@ const Footer = () => {
       <MDBFooter color="blue" className="font-small pt-4 mt-4">
         <MDBContainer fluid className="text-center text-md-left">
           <MDBRow className="leftFooterColumn">
-            <MDBCol md="4">
-            </MDBCol>
             <MDBCol md="3">
+            </MDBCol>
+            <MDBCol md="4">
               <h5 className="creditLink">Connect With Us</h5>
               <MDBRow>
               <MDBCol md="3">

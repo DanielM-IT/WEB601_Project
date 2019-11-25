@@ -1,17 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PageTitle from '../../pageElements/PageTitle'
 import {Form, Button} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
-import {connect} from 'react-redux'
-import {accountActions} from '../../../actions/accountActions'
+import GoogleLogin from 'react-google-login'
 import './Login.css'
 
 
-class LoginPage extends React.Component {
+export default class LoginPage extends React.Component {
   constructor(props) {
     super(props)
 
-    this.props.logout()
 
     this.state = {
         email: '',
@@ -45,6 +43,20 @@ class LoginPage extends React.Component {
   render() {
     const { loggingIn } = this.props
     const { email, password, submitted } = this.state
+
+    const [name,setName] = useState("")
+
+    const [email,setEmail] = useState("")
+
+    const [url,setUrl] = useState("")
+
+
+    const responseGoogle = response => {
+      setName(response.profileObj.name)
+      setEmail(response.profileObj.email)
+      setUrl(response.profileObj.imageUrl)
+
+    }
 
     return (
       <div className="loginWrapper">
@@ -82,6 +94,15 @@ class LoginPage extends React.Component {
                     <div className="helpBlock">Password is required</div>}
                 </div>
                 <br />
+                <GoogleLogin
+                  clientId="628926382103-esupl3pfh09ulilccp614q32t6unsbi2.apps.googleusercontent.com"
+                  buttonText="Login"
+                  onSuccess={responseGoogle}
+                  onFailure={responseGoogle}
+                  cookiePolicy={'single_host_origin'}
+                />
+                <br />
+                <br />
                 <div className="form-group">
                   <Button primary className="btnLogin">Login</Button>
                   {loggingIn &&
@@ -98,15 +119,25 @@ class LoginPage extends React.Component {
   }
 }
 
-function mapState(state) {
-  const {loggingIn} = state.authentication
-  return {loggingIn}
-}
+// export default class LoginPage extends React.Component {
+//   constructor(props) {
+//     super(props)
 
-const actionCreators = {
-  login: accountActions.login,
-  logout: accountActions.logout
-}
+//     this.state = {
+//         redirected: false
+//     }
 
-const connectedLoginPage = connect(mapState, actionCreators)(LoginPage)
-export {connectedLoginPage as LoginPage}
+//     this.signup = this.signup.bind(this)
+//   }
+
+//   signup(res, type) {
+
+//   }
+
+
+//   render() {
+
+
+
+
+

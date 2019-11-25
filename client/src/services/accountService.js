@@ -1,65 +1,8 @@
 export const accountService = {
-    login,
-    logout,
-    register,
-    getAccount,
-    getById,
-    update
-}
-            // The request type and controller is then fetched through the following url. The request method is specified
-            // along with the content type specified as being converted to json format before being posted into 
-            // the database table.
-            // fetch('http://localhost:4200/api/account', {
-            //     method: 'post',
-            //     headers: {'Content-Type':'application/json'},
-            //     body: JSON.stringify({
-            //         "firstName": this.firstName.value,
-            //         "lastName": this.lastName.value,
-            //         "email": this.email.value,
-            //         "phone": this.phone.value,
-            //         "password": this.password.value,
-            //     })
-            // })
-
-// fetch('http://localhost:4200/api/account', {
-//     method: 'post',
-//     headers: {'Content-Type':'application/json'},
-//     body: JSON.stringify({
-//         "firstName": this.firstName.value,
-//         "lastName": this.lastName.value,
-//         "email": this.email.value,
-//         "phone": this.phone.value,
-//         "password": this.password.value,
-//     })
-// })
-function login(email, password) {
-    const requestOptions = {
-        method: 'post',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({ email, password })
-    }
-
-    return fetch(`http://localhost:4200/api/account/`, requestOptions)
-        .then(handleResponse)
-        .then(account => {
-            localStorage.setItem('account', JSON.stringify(account))
-
-            return account
-        })
+    register
 }
 
-function logout() {
-    localStorage.removeItem('account')
-}
 
-function getAccount(email) {
-    const requestOptions = {
-        method: 'get',
-    }
-
-    return fetch('http://localhost:4200/api/account/' + email, requestOptions)
-        .then(handleResponse);
-}
 
 function register(fields) {
     const requestOptions = {
@@ -72,35 +15,12 @@ function register(fields) {
         .then(handleResponse)
 }
 
-function update(account) {
-    const requestOptions = {
-        method: 'put',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(account)
-    }
-
-    return fetch(`http://localhost:4200/api/account/${account.email}`, requestOptions)
-        .then(handleResponse)
-}
-
-function getById(email) {
-    const requestOptions = {
-        method: 'GET',
-    }
-
-    return fetch(`http://localhost:4200/api/account/${email}`, requestOptions)
-        .then(handleResponse)
-}
-
-
 
 function handleResponse(response) {
     return response.text().then(text => {
         const data = text && JSON.parse(text)
         if (!response.ok) {
             if (response.status === 401) {
-                logout()
-                // location.reload(true)
             }
 
             const error = (data && data.message) ||
